@@ -1,0 +1,2 @@
+schools and colleges often manage student records manually, making it difficult to organize, search, update and analyze information.
+This project provides a modern desktop application to manage student records efficiently while including AI powered features.

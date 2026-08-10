@@ -1,0 +1,229 @@
+THIS SCREEN ALLOWS THE ADMIN TO CREATE A COMPLETE TEACHER PROFILE AND ASSIGN THEIR DEPARTMENT AND SUBJECTS.
+
+# PURPOSE
+
+Admin can add:
+
+1. Teacher personal details
+2. Contact information
+3. Professional information
+4. Department
+5. Subjects
+6. Profile photo
+7. Joining information
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Add New Teacher                                                       |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │                     TEACHER PHOTO                                 │  |
+| 👨‍🏫 Teachers   ←     |  │                       [ 📷 ]                                     │  |
+| 📚 Courses           |  │                    [ Upload ]                                   │  |
+| 📅 Attendance        |  └─────────────────────────────────────────────────────────────────┘  |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  PERSONAL INFORMATION                                                   |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  Full Name        [________________________]                          |
+| 📈 Analytics         |  Date of Birth    [__/__/____]                                       |
+| 🤖 AI Assistant      |  Gender           [▼ Select]                                          |
+| 🔔 Notifications     |  Teacher ID       [Auto Generated]                                   |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  CONTACT INFORMATION                                                    |
+| 🚪 Logout            |                                                                         |
+|                      |  Email            [________________________]                          |
+|                      |  Phone            [________________________]                          |
+|                      |                                                                         |
+|                      |  PROFESSIONAL INFORMATION                                               |
+|                      |                                                                         |
+|                      |  Department       [▼ Select Department]                             |
+|                      |  Qualification    [________________________]                          |
+|                      |  Specialization   [________________________]                          |
+|                      |  Joining Date     [__/__/____]                                       |
+|                      |                                                                         |
+|                      |  SUBJECTS                                                                |
+|                      |                                                                         |
+|                      |  ☑ Python     ☑ AI      ☐ DBMS      ☐ Mathematics                 |
+|                      |                                                                         |
+|                      |  [ Cancel ]             [ Reset ]        [ ✓ Save Teacher ]           |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# TEACHER PHOTO
+
+       ┌─────────────┐
+       │             │
+       │   PHOTO     │
+       │             │
+       └─────────────┘
+
+       [ Upload Photo ]
+
+After uploading:
+
+[ Teacher Photo ]
+
+[ Change ] [ Remove ]
+
+# PERSONAL INFORMATION
+
+Fields:
+
+Teacher ID — auto-generated
+Full Name
+Date of Birth
+Gender
+
+Example:
+Teacher ID: TCH2026001 🔒
+The ID should be automatically generated.
+
+# CONTACT INFORMATION
+
+Email      [____________________________]
+
+Phone      [____________________________]
+
+Alternate  [____________________________]  (Optional)
+
+# Professional Information
+
+Department
+
+Dropdown:
+
+[ Select Department ▼ ]
+
+Computer Science
+Artificial Intelligence
+Mathematics
+Physics
+Management
+
+Qualification:
+
+Qualification
+[ M.Tech / PhD / MSc / MBA / Other ]
+
+Specialization
+
+Example:
+Artificial Intelligence
+Machine Learning
+
+Joining Date
+
+Use a date picker instead of requiring manual date formatting.
+
+# SUBJECT ASSIGNMENT
+
+Allow multiple subjects.
+
+Subjects
+
+☑ Python
+☑ Artificial Intelligence
+☐ Database Management
+☐ Mathematics
+☐ Computer Networks
+
+Better design:
+
+Available Subjects              Assigned Subjects
+
+Python                          Python
+AI                    →         AI
+DBMS
+Maths
+
+This becomes especially useful later when assigning teachers to courses.
+
+# BUTTONS
+
+✓ Save Teacher
+
+Fill Form
+    ↓
+Validate
+    ↓
+Save Teacher
+    ↓
+Assign Subjects
+    ↓
+Success
+
+Reset
+Clears the form.
+
+Cancel
+Returns to Teacher Management.
+
+# VALIDATION
+
+Check:
+
+1. Name required
+2. Valid email
+3. Valid phone number
+4. Department selected
+5. Qualification entered
+6. Joining date valid
+7. At least one subject selected
+8. Duplicate teacher email prevented
+
+# ERROR MESSAGES
+
+❌ Teacher name is required.
+
+❌ Invalid email address.
+
+❌ Invalid phone number.
+
+❌ Please select a department.
+
+❌ Please assign at least one subject.
+
+❌ A teacher with this email already exists.
+
+# SUCCESS DIALOG
+
++------------------------------------------+
+|             ✓ Success                    |
+|                                          |
+| Teacher added successfully!              |
+|                                          |
+| Teacher ID: TCH2026001                   |
+|                                          |
+|        [ View Teacher ]   [ Done ]       |
++------------------------------------------+
+
+# NAVIGATION
+
+Teacher Management
+       │
+       ▼
+  Add Teacher
+       │
+   ┌───┼──────────┐
+   ▼   ▼          ▼
+ Save Reset     Cancel
+   │               │
+   ▼               ▼
+Success        Teacher List
+
+# RESUME-LEVEL UX
+
+Add later:
+
+1. Profile photo preview
+2. Real-time validation
+3. Password/account creation if teachers need login
+4. Auto-generated Teacher ID
+5. Multi-subject assignment
+6. Unsaved changes warning
+7. Joining-date picker
+8. Activity log

@@ -1,0 +1,266 @@
+THIS SCREEN IS USED TO ENTER AND MANAGE STUDENTS' MARKS FOR A SELECTED COURSE/SUBJECT AND EXAM.
+
+# PURPOSE
+
+The teacher/admin should be able to:
+
+1. Select course
+2. Select semester/section
+3. Select exam type
+4. Enter marks
+5. Automatically calculate total/percentage
+6. Automatically assign grades
+7. Search students
+8. Save marks
+9. Edit existing marks
+10. Detect invalid marks
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Marks Management                                                       |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Marks Entry                                                           |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  Course       [▼ Python                         ]                     |
+| 📚 Courses           |  Semester     [▼ 1                              ]                     |
+| 📅 Attendance        |  Section      [▼ A                              ]                     |
+| 📝 Marks        ←    |  Exam         [▼ Mid-Term                       ]                     |
+| 💰 Fees              |  Max Marks    [ 50 ]                                             |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  [ 🔍 Search Student................ ]                            |
+| 📈 Analytics         |                                                                         |
+| 🤖 AI Assistant      |  -----------------------------------------------------------------------|
+| 🔔 Notifications     |  | ID | Student | Marks | Grade | Percentage | Status |              |
+| ⚙ Settings           |  -----------------------------------------------------------------------|
+| 👤 Profile           |  |101 | Rahul    | [45]  | A     | 90%        | ✓       |             |
+| 🚪 Logout            |  |102 | Aman     | [38]  | B     | 76%        | ✓       |             |
+|                      |  |103 | Riya     | [42]  | A     | 84%        | ✓       |             |
+|                      |  |104 | Mohan    | [  ]  | --    | --         | Pending |             |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      | [ Calculate Grades ]     [ Clear ]     [ ✓ Save Marks ]              |
++----------------------+-------------------------------------------------------------------------+
+
+# TOP SELECTION
+
+Course
+[▼ Select Course]
+
+Example:
+Python
+AI
+DBMS
+Mathematics
+
+Semester
+[▼ Semester 1]
+
+Section
+[▼ Section A]
+
+Exam Type
+[▼ Select Exam]
+
+├── Assignment
+├── Quiz
+├── Mid-Term
+├── End-Term
+└── Practical
+
+# MAXIMUM MARKS
+
+Maximum Marks
+
+[ 50 ]
+
+This is important because the system needs to validate the entered marks.
+For example:
+
+Maximum = 50
+Entering 57 should immediately produce:
+
+❌ Marks cannot be greater than 50.
+
+# MARKS TABLE
+
+Each student gets a row:
+
+ID     |     Student   |     Marks     |     Grade    |      Percentage    |     Status
+101    |     Rahul     |     45        |      A       |         90%        |       ✓
+102    |     Aman      |     38        |      B       |         76%        |       ✓
+103    |     Riya      |     42        |      A       |         84%        |       ✓
+104    |     Mohan     |     —         |      —       |          —         |     Pending
+The Marks column should be editable.
+
+# AUTOMATIC GRADE CALCULATION
+
+Don't make the teacher manually enter grades.
+
+Example grading system:
+90–100 → A+
+80–89  → A
+70–79  → B
+60–69  → C
+50–59  → D
+<50    → F
+
+You can later make the grading scale configurable from Settings.
+
+# AUTOMATIC PERCENTAGE
+
+If:
+Marks = 45
+Maximum = 50
+
+Then:
+Percentage = 45 / 50 × 100
+           = 90%
+
+The UI automatically displays:
+45 / 50
+90%
+A+
+
+# SEARCH
+
+🔍 [ Search by student name / ID................ ]
+
+Example:
+Search: Rahul
+
+→ Rahul Kumar
+Useful for large classes.
+
+# CALCULATE GRADES
+
+Button:
+[ Calculate Grades ]
+
+This recalculates:
+Percentage
+Grade
+Pass/Fail status
+
+# SAVE MARKS
+
+Button:
+[ ✓ Save Marks ]
+
+Flow:
+Select Course
+      ↓
+Select Exam
+      ↓
+Enter Marks
+      ↓
+Validate
+      ↓
+Calculate Grades
+      ↓
+Check Existing Records
+      ↓
+Save
+
+# DUPLICATE MARKS PROTECTION
+
+If marks already exist:
+
++---------------------------------------------+
+|       Marks Already Exist                   |
+|                                             |
+| Marks for Python Mid-Term already exist.    |
+|                                             |
+| [ View Existing ]                           |
+| [ Edit Existing ]                           |
+| [ Cancel ]                                  |
++---------------------------------------------+
+
+# VALIDATION
+
+Check:
+
+1. Course selected
+2. Semester selected
+3. Section selected
+4. Exam type selected
+5. Maximum marks valid
+6. Marks cannot be negative
+7. Marks cannot exceed maximum
+8. Student cannot have duplicate marks for same exam
+9. Empty marks should be handled explicitly
+
+# ERROR MESSAGES
+
+❌ Marks cannot be negative.
+
+❌ Marks cannot exceed maximum marks.
+
+❌ Please select an exam type.
+
+❌ Please enter marks for all required students.
+
+❌ Marks already exist for this exam.
+
+# SUMMARY CARDS
+
+After entering marks:
++-------------+-------------+-------------+-------------+
+| Students    | Average     | Highest     | Lowest      |
+|    50       |    72%      |    98%      |    32%      |
++-------------+-------------+-------------+-------------+
+
+This gives the teacher immediate insight into class performance.
+
+# AI INSIGHT ⭐
+
+Later, your AI module can generate:
+🤖 AI Class Insight
+
+Average performance: 72%
+
+⚠ 8 students scored below 50%.
+
+📈 Python performance improved by 7%
+compared with the previous assessment.
+
+💡 Consider revising loops and functions
+before the next assessment.
+
+This is one of the features that can make your project stand out.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Marks Management
+    │
+    ├── Enter Marks
+    │
+    ├── Edit Marks
+    │
+    ├── Student Results
+    │
+    ├── Generate Report
+    │
+    └── Analytics
+
+# RESUME-LEVEL FEATURES
+
+Add these after the basic marks system works:
+
+1. Automatic GPA calculation
+2. Automatic grade calculation
+3. Class ranking
+4. Subject-wise performance
+5. Semester performance
+6. Performance graphs
+7. PDF report card
+8. Excel export
+9. AI performance analysis
+10. Weak-subject detection
+11. Historical performance comparison

@@ -1,0 +1,196 @@
+THIS IS THE MAIN SCREEN FOR MANAGING ALL TEACHERS IN THE SYSTEM.
+
+# PURPOSE
+
+Admin can:
+
+1. View all teachers
+2. Search teachers
+3. Filter teachers
+4. Add teacher
+5. View teacher profile
+6. Edit teacher
+7. Delete/deactivate teacher
+8. Assign courses/subjects
+9. Export teacher data
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Teacher Management                                                    |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Teachers (35)                                                        |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers   ←     |  [ 🔍 Search name / ID / email................ ] [Search]          |
+| 📚 Courses           |                                                                         |
+| 📅 Attendance        |  Department [▼]   Status [▼]   Subject [▼]   [Apply Filters]      |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  [+ Add Teacher]   [Import]   [Export ▼]                         |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  -----------------------------------------------------------------------|
+| 📈 Analytics         |  | ID | Teacher | Department | Subjects | Email | Status | Actions |
+| 🤖 AI Assistant      |  -----------------------------------------------------------------------|
+| 🔔 Notifications     |  | T01| Amit    | CS         | Python   | ...   | Active | 👁 ✏ ⋮ |
+| ⚙ Settings           |  | T02| Priya   | AI         | ML       | ...   | Active | 👁 ✏ ⋮ |
+| 👤 Profile           |  | T03| Rahul   | Maths      | Maths    | ...   | Active | 👁 ✏ ⋮ |
+| 🚪 Logout            |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |               [ < ]  1  2  3  [ > ]                            |
++----------------------+-------------------------------------------------------------------------+
+
+# SEARCH
+
+Search by:
+
+1. Teacher name
+2. Teacher ID
+3. Email
+4. Phone
+
+🔍 [ Search teachers............................. ]
+
+# FILTERS
+
+Department    [▼ All Departments]
+
+Subject       [▼ All Subjects]
+
+Status        [▼ Active / Inactive]
+
+Then:
+
+[ Apply Filters ]    [ Clear ]
+
+# TEACHER TABLE
+
+Field            |           Purpose
+Teacher ID       |           Unique ID
+Name             |           Teacher name
+Department       |           Department
+Subjects         |           Assigned subjects
+Email            |           Contact
+Status           |           Active/Inactive
+Actions          |           View/Edit/More
+
+# ACTION BUTTONS
+
+👁 View
+
+Opens:
+
+Teacher Profile
+
+✏ Edit
+
+Opens:
+
+Edit Teacher
+
+⋮ More
+
++----------------------+
+| View Profile         |
+| Edit Teacher         |
+| Assign Subject       |
+| Assign Course        |
+| Deactivate           |
+| Delete               |
++----------------------+
+
+# ADD TEACHER
+
+[ + Add Teacher ]
+opens the next teacher form screen.
+
+# IMPORT / EXPORT
+
+Import
+
+[ Import ▼ ]
+
+    CSV
+    Excel
+
+Export
+
+[ Export ▼ ]
+
+    CSV
+    Excel
+    PDF
+
+# EMPTY STATE
+
+If no teachers exist:
+
++--------------------------------------------------+
+
+                    👨‍🏫
+
+               No Teachers Found
+
+       Add your first teacher to begin.
+
+                 [ + Add Teacher ]
+
++--------------------------------------------------+
+
+If a search returns nothing:
+
+No teachers match your search.
+[ Clear Search ]
+
+# DELETE / DEACTIVATE
+
+Instead of immediately deleting a teacher, prefer:
+
++------------------------------------------+
+|       Deactivate Teacher?                |
+|                                          |
+| Amit Kumar will no longer be active.     |
+|                                          |
+| [ Cancel ]          [ Deactivate ]       |
++------------------------------------------+
+
+This is safer because their previous attendance/marks records may still be needed.
+
+# SUCCESS MESSAGES
+
+✅ Teacher added successfully.
+
+✅ Teacher information updated.
+
+✅ Teacher deactivated successfully.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Teacher Management
+    │
+    ├── Add Teacher ──────► Add Teacher
+    │
+    ├── 👁 View ──────────► Teacher Profile
+    │
+    ├── ✏ Edit ───────────► Edit Teacher
+    │
+    ├── Assign Subject ───► Subject Assignment
+    │
+    └── ⋮ More ───────────► Additional Actions
+
+# UX IMPROVEMENTS
+
+For your resume-level version:
+
+1. Pagination
+2. Search-as-you-type
+3. Multi-filter support
+4. Sort by name/department
+5. Teacher status badges
+6. Confirmation before deactivation
+7. Import preview before importing
+8. Export filtered results
+9. Recently added teacher indicator

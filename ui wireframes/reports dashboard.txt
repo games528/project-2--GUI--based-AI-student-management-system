@@ -1,0 +1,248 @@
+THIS IS THE CENTRAL PLACE WHERE THE ADMIN CAN GENERATE AND VIEW REPORTS FROM STUDENTS, ATTENDANCE, MARKS, FEES, COURSES, AND LIBRARY DATA.
+
+# PURPOSE
+
+The admin should be able to:
+
+1. Select a report type
+2. Apply filters
+3. Preview results
+4. Generate reports
+5. Export as PDF/Excel/CSV
+6. Print reports
+7. View summary statistics
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Reports Dashboard                                                      |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Generate & Analyze Reports                                            |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  REPORT TYPE                                                           |
+| 📚 Courses           |                                                                         |
+| 📅 Attendance        |  [▼ Select Report]                                                    |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  ┌───────────────────────────────────────────────────────────────┐  |
+| 📖 Library           |  │ 👨‍🎓 Student Report                                             │  |
+| 📊 Reports     ←     |  │ 📅 Attendance Report                                          │  |
+| 📈 Analytics         |  │ 📝 Marks / Result Report                                      │  |
+| 🤖 AI Assistant      |  │ 💰 Fee Collection Report                                      │  |
+| 🔔 Notifications     |  │ 📚 Course Report                                             │  |
+| ⚙ Settings           |  │ 📖 Library Report                                            │  |
+| 👤 Profile           |  └───────────────────────────────────────────────────────────────┘  |
+| 🚪 Logout            |                                                                         |
+|                      |  FILTERS                                                                |
+|                      |                                                                         |
+|                      |  Semester [▼]  Section [▼]  Course [▼]  Date [📅]                  |
+|                      |                                                                         |
+|                      |  [ Generate Report ]      [ Reset Filters ]                       |
+|                      |                                                                         |
+|                      |  QUICK REPORTS                                                         |
+|                      |                                                                         |
+|                      |  [ Attendance ] [ Results ] [ Fees ] [ Library ]                 |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# REPORT TYPES
+
+The dropdown should contain:
+
+[▼ Select Report]
+
+├── Student Report
+├── Attendance Report
+├── Marks / Result Report
+├── Fee Report
+├── Course Report
+├── Library Report
+└── Teacher Report
+
+# STUDENT REPORT
+
+Example:
+STUDENT REPORT
+
+Student ID | Name        | Department | Semester | Status
+-----------------------------------------------------------
+101        | Rahul Kumar | AI & DS    | 1        | Active
+102        | Aman Singh  | AI & DS    | 1        | Active
+103        | Riya Sharma | AI & DS    | 1        | Active
+
+# ATTENDANCE REPORT
+
+ATTENDANCE REPORT
+
+Student       | Python | DBMS | Maths | Overall
+------------------------------------------------
+Rahul Kumar   | 92%    | 87%  | 90%   | 89.6%
+Aman Singh    | 68%    | 74%  | 81%   | 74.3%
+Riya Sharma   | 95%    | 91%  | 94%   | 93.3%
+
+You can highlight students below the configured attendance threshold.
+
+# MARKS / RESULT REPORT
+
+RESULT REPORT
+
+Student       | Python | DBMS | Maths | Average | Grade
+---------------------------------------------------------
+Rahul Kumar   | 90     | 82   | 88    | 86.6%   | A
+Aman Singh    | 72     | 68   | 75    | 71.6%   | B
+Riya Sharma   | 94     | 91   | 96    | 93.6%   | A+
+
+# FEE REPORT
+
+FEE REPORT
+
+Student       | Total     | Paid      | Pending   | Status
+------------------------------------------------------------
+Rahul Kumar   | ₹50,000   | ₹40,000   | ₹10,000   | Due
+Aman Singh    | ₹50,000   | ₹50,000   | ₹0        | Paid
+Riya Sharma   | ₹50,000   | ₹30,000   | ₹20,000   | Overdue
+
+# LIBRARY REPORT
+
+LIBRARY REPORT
+
+Total Books       850
+Available         620
+Issued            210
+Overdue            20
+
+Most Borrowed Books
+1. Python Programming
+2. DBMS Fundamentals
+3. AI Fundamentals
+
+# FILTERS
+
+Filters change depending on the report.
+
+Common filters:
+Department   [▼ All]
+Semester     [▼ All]
+Section      [▼ All]
+Course       [▼ All]
+Date Range   [ Start 📅 ] — [ End 📅 ]
+
+Example:
+Semester: 1
+Course: Python
+Date: 01/08/2026 → 31/08/2026
+
+# GENERATE REPORT
+
+[ 📊 Generate Report ]
+
+Flow:
+Select Report
+      ↓
+Apply Filters
+      ↓
+Generate
+      ↓
+Preview
+      ↓
+Export
+
+# REPORT PREVIEW
+
+After generation:
++------------------------------------------------------------+
+|                    REPORT PREVIEW                          |
+|                                                            |
+| AI STUDENT MANAGEMENT SYSTEM                               |
+|                                                            |
+| Report: Attendance Report                                  |
+| Period: August 2026                                        |
+|                                                            |
+| ---------------------------------------------------------- |
+| Student       | Attendance | Status                        |
+| ---------------------------------------------------------- |
+| Rahul Kumar   | 89%        | Good                          |
+| Aman Singh    | 68%        | ⚠ Low                         |
+| Riya Sharma   | 93%        | Excellent                     |
+| ---------------------------------------------------------- |
+|                                                            |
+| [ Download PDF ] [ Export Excel ] [ Print ]                |
++------------------------------------------------------------+
+
+# EXPORT OPTIONS
+
+[ Export ▼ ]
+
+├── 📄 PDF
+├── 📊 Excel
+└── 📋 CSV
+
+# EMPTY STATE
+
+If no records match the filters:
++---------------------------------------------+
+|                  📊                         |
+|                                             |
+|          No Data Available                  |
+|                                             |
+| Try changing your filters and generate      |
+| the report again.                           |
+|                                             |
+|              [ Clear Filters ]              |
++---------------------------------------------+
+
+# AI REPORT SUMMARY ⭐
+
+This is where your project can become much more impressive.
+
+After generating a report:
+🤖 AI SUMMARY
+
+• Overall attendance is 84.2%.
+• 7 students have attendance below 75%.
+• Average class score increased by 6%.
+• Python has the highest average score.
+• 3 students may need academic attention.
+
+[ Ask AI About This Report ]
+
+The AI should summarize the data, not invent information.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Reports
+    │
+    ├── Student Report
+    ├── Attendance Report
+    ├── Marks Report
+    ├── Fee Report
+    ├── Course Report
+    ├── Library Report
+    └── Teacher Report
+             │
+             ▼
+        Report Preview
+             │
+       ┌─────┼─────┐
+       ▼     ▼     ▼
+      PDF  Excel   CSV
+
+RESUME-LEVEL FEATURES ⭐
+
+Later add:
+
+1. Custom report builder
+2. Date-range filtering
+3. PDF generation
+4. Excel export
+5. Charts inside reports
+6. Scheduled reports
+7. AI-generated summaries
+8. Student report cards
+9. Automated low-attendance reports
+10. Automated fee-pending reports

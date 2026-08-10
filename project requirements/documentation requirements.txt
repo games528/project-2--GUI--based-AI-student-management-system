@@ -1,0 +1,8 @@
+README.md
+features
+installation steps
+screenshots
+project structure
+technologies used
+future improvements
+license

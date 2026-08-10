@@ -1,0 +1,260 @@
+THIS SCREEN IS THE COMPLETE OVERVIEW OF ONE STUDENT. IT SHOULD FEEL LIKE A PROFESSIONAL STUDENT PROFILE RATHER THAN JUST ANOTHER FORM.
+
+# PURPOSE
+
+Admin can see:
+
+1. Student personal information
+2. Academic information
+3. Attendance
+4. Marks/GPA
+5. Fees
+6. Courses
+7. Recent activity
+8. AI-generated performance insights
+9. Edit student
+10. Generate report
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  ← Back to Students                  Student Profile                   |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │  [PHOTO]    Rahul Kumar                    🟢 Active           │  |
+| 👨‍🏫 Teachers         |  │             Student ID: STU2026001                              │  |
+| 📚 Courses           |  │             BSc AI & Data Science • Semester 2                  │  |
+| 📅 Attendance        |  │                                                                  │  |
+| 📝 Marks             |  │             [ ✏ Edit ]   [ 📄 Generate Report ]                 │  |
+| 💰 Fees              |  └─────────────────────────────────────────────────────────────────┘  |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 📈 Analytics         |  │ Attendance │ │   Avg GPA  │ │ Fees Due   │ │ Courses    │       |
+| 🤖 AI Assistant      |  │    92%     │ │    8.4     │ │  ₹5,000    │ │     6      │       |
+| 🔔 Notifications     |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  PERSONAL INFORMATION                                                   |
+| 🚪 Logout            |  Name: Rahul Kumar          DOB: 12/05/2007                          |
+|                      |  Gender: Male                Phone: 9876543210                       |
+|                      |  Email: rahul@email.com      Address: Ranchi, Jharkhand               |
+|                      |                                                                         |
+|                      |  ACADEMIC INFORMATION                                                   |
+|                      |  Course: BSc AI & DS        Department: Computer Science              |
+|                      |  Semester: 2                Section: A                                 |
+|                      |  Admission Year: 2026       Roll No: 101                               |
+|                      |                                                                         |
+|                      |  PERFORMANCE                                                           |
+|                      |                                                                         |
+|                      |  Marks / GPA Chart                                                     |
+|                      |  ┌───────────────────────────────────────────────────────────────┐     |
+|                      |  │                    📊 Performance Graph                         │     |
+|                      |  └───────────────────────────────────────────────────────────────┘     |
+|                      |                                                                         |
+|                      |  RECENT ACTIVITY                                                        |
+|                      |  • Attendance marked                                                  |
+|                      |  • Mathematics marks updated                                         |
+|                      |  • Fee payment received                                               |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# PROFILE HEADER
+
+At the top, show:
+
+[PHOTO]
+
+Rahul Kumar
+STU2026001
+BSc AI & Data Science
+Semester 2
+
+🟢 Active
+
+Buttons:
+
+[ ✏ Edit Student ]
+[ 📄 Generate Report ]
+[ 🖨 Print ]
+
+ QUICK STATISTICS
+
+Four or more cards:
+
+Attendance
+92%
+
+GPA
+8.4
+
+Fees Due
+₹5,000
+
+Courses
+6
+
+You can make these cards clickable.
+For example:
+Attendance card → Attendance History
+
+# PERSONAL INFORMATION
+
+Display information in a clean two-column layout:
+
+Personal Information
+
+Full Name        Rahul Kumar
+Student ID       STU2026001
+Date of Birth    12/05/2007
+Gender           Male
+Email            rahul@email.com
+Phone            9876543210
+Address          Ranchi, Jharkhand
+
+# ACADEMIC INFORMATION
+
+Academic Information
+
+Course           BSc AI & Data Science
+Department       Computer Science
+Semester         2
+Section          A
+Admission Year   2026
+Roll Number      101
+
+# PERFORMANCE SECTION
+
+Show a graph such as:
+
+Marks
+100 |                       ●
+ 90 |                  ●
+ 80 |             ●
+ 70 |        ●
+ 60 |   ●
+    +----------------------------
+       Math  Python  DBMS  AI
+
+You can later implement this using Matplotlib.
+
+Also show:
+
+1. Average marks
+2. GPA
+3. Best subject
+4. Weakest subject
+5. Performance trend
+# ATTENDANCE SECTION
+
+Attendance
+
+Overall: 92%
+
+Math       ██████████████████  95%
+Python     █████████████████   90%
+DBMS       ██████████████████  94%
+AI         ███████████████     82%
+
+A warning can appear if attendance drops below your chosen threshold:
+
+⚠ Attendance in AI is below 75%.
+
+# AI INSIGHTS ⭐
+
+This is where your project starts standing out.
++------------------------------------------------------+
+| 🤖 AI Performance Insight                            |
++------------------------------------------------------+
+
+Based on the student's recent performance:
+
+✓ Strong performance in Python and Mathematics.
+
+⚠ AI subject performance has declined recently.
+
+💡 Recommendation:
+Spend additional study time on AI fundamentals
+and practice more problem-solving questions.
+
+📈 Overall trend: Improving
++------------------------------------------------------+
+
+Keep this as an optional AI module rather than making the entire application depend on AI.
+
+# RECENT ACTIVITY
+
+Recent Activity
+
+🟢 Fee payment recorded          07 Aug
+📝 Marks updated                 06 Aug
+📅 Attendance marked             05 Aug
+📚 Book returned                 03 Aug
+
+# GENERATE REPORT
+
+Button:
+
+[ 📄 Generate Report ]
+
+Options:
+
+Generate Report
+────────────────────────
+
+☑ Personal Information
+☑ Academic Details
+☑ Attendance
+☑ Marks
+☑ Fees
+
+Format:
+
+(●) PDF
+( ) Excel
+
+[ Generate ]
+
+# DELETE STUDENT
+
+Don't put a large Delete button next to Edit.
+Instead, place it in a menu:
+
+[ ⋮ More ]
+
+    Edit
+    Generate Report
+    Print
+    Delete Student
+
+Then ask for confirmation.
+
+# NAVIGATION
+
+Student List
+     │
+     ▼
+Student Profile
+     │
+     ├── Edit ─────────────► Edit Student
+     │
+     ├── Attendance ───────► Attendance History
+     │
+     ├── Marks ────────────► Marks
+     │
+     ├── Fees ─────────────► Fee History
+     │
+     ├── Generate Report ──► Report
+     │
+     └── AI Insights ──────► AI Analysis
+
+# IMPORTANT UX RULE
+
+Don't put everything into one giant page.
+Use sections/tabs:
+
+[Overview] [Attendance] [Marks] [Fees] [Courses] [Activity]
+
+The Overview tab is the screen above.
+This keeps the application clean and makes it much easier to implement.

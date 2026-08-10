@@ -1,0 +1,5 @@
+fee reminders
+attendance alerts
+result notifications
+assignment notifications
+birthday notifications

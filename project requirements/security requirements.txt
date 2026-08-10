@@ -1,0 +1,5 @@
+login authentication 
+password hashing
+input validation
+SQL injection prevention
+exception handling 

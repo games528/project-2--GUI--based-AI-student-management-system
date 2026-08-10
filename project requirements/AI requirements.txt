@@ -1,0 +1,6 @@
+analyze marks
+predict performance
+recommend subjects to improve 
+generate student summaries
+identify weak students
+suggest study plans

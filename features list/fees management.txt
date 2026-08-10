@@ -1,0 +1,6 @@
+fee payment
+pending fees 
+fee receipt
+fee history
+fine calculation
+due reminders

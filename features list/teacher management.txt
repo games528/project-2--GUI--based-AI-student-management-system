@@ -1,0 +1,7 @@
+add teacher
+update teacher
+delete teacher
+view teacher
+search teacher
+assign subjects
+teacher profile

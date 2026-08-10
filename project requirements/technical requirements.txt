@@ -1,0 +1,7 @@
+python 3
+Tkinter 
+SQLite database
+Git 
+GitHub 
+virtual environment
+requirements.txt

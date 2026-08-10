@@ -1,0 +1,242 @@
+THIS SCREEN HANDLES LENDING A LIBRARY BOOK TO A STUDENT OR TEACHER.
+
+# PURPOSE
+
+The librarian/admin can:
+
+1. Select borrower
+2. Search/select a book
+3. Check availability
+4. Set issue and due dates
+5. Record the issue
+6. Generate a transaction/issue ID
+7. Prevent issuing unavailable books
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Issue Book                                                             |
+|                      |                                                                         |
+| 🏠 Dashboard         |  BOOK CHECKOUT                                                          |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  Borrower Type    [▼ Student]                                         |
+| 📚 Courses           |                                                                         |
+| 📅 Attendance        |  Student          [🔍 Search student................]              |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  Student ID       STU2026001                                        |
+| 📖 Library     ←     |  Name             Rahul Kumar                                        |
+| 📊 Reports           |                                                                          |
+| 📈 Analytics         |  BOOK INFORMATION                                                      |
+| 🤖 AI Assistant      |                                                                         |
+| 🔔 Notifications     |  Book             [🔍 Search book....................]              |
+| ⚙ Settings           |  Book ID          B001                                                 |
+| 👤 Profile           |  Title            Python Programming                                   |
+| 🚪 Logout            |  Available        7 / 10 🟢                                            |
+|                      |                                                                         |
+|                      |  ISSUE DETAILS                                                          |
+|                      |                                                                         |
+|                      |  Issue Date       [ 09/08/2026 📅 ]                                   |
+|                      |  Due Date         [ 23/08/2026 📅 ]                                   |
+|                      |                                                                         |
+|                      |  [ Cancel ]                         [ ✓ Issue Book ]                   |
++----------------------+-------------------------------------------------------------------------+
+
+# BORROWER SELECTION
+
+First choose:
+Borrower Type
+
+[▼ Student]
+
+Later you can support:
+Student
+Teacher
+
+Then search:
+🔍 Search student by name / ID
+
+Example:
+Search: Rahul
+
+→ Rahul Kumar
+   STU2026001
+   BSc AI & DS — Semester 1
+
+Once selected, automatically display the student's information.
+
+# BOOK SELECTION
+
+🔍 Search book by title / ISBN / Book ID
+Example:
+Python Programming
+B001
+ISBN: 978XXXXXXXXXX
+Available: 7 / 10
+
+# AVAILABILITY CHECK ⭐
+
+This is critical.
+
+If:
+Total Copies: 10
+Available: 7
+
+show:
+🟢 Available
+
+If:
+Available: 0
+
+show:
+🔴 No copies available
+
+and disable:
+[ Issue Book ]
+
+# ISSUE DATE
+
+Default to today's date:
+Issue Date
+[ 09/08/2026 📅 ]
+
+The admin can change it if necessary.
+
+# DUE DATE
+
+Due Date
+[ 23/08/2026 📅 ]
+You can automatically calculate it.
+
+For example:
+Issue Date + 14 days = Due Date
+
+Later, make the borrowing period configurable in Settings.
+
+# BORROWING SUMMARY
+
+Before issuing, show a confirmation summary:
++------------------------------------------------+
+|               CHECKOUT SUMMARY                |
+|                                                |
+| Borrower: Rahul Kumar                          |
+| ID: STU2026001                                |
+|                                                |
+| Book: Python Programming                       |
+| Book ID: B001                                 |
+|                                                |
+| Issue Date: 09/08/2026                        |
+| Due Date:   23/08/2026                        |
+|                                                |
+| Available after issue: 6 / 10                 |
++------------------------------------------------+
+
+This reduces accidental transactions.
+
+# ISSUE BOOK FLOW
+
+Select Borrower
+       ↓
+Select Book
+       ↓
+Check Availability
+       ↓
+Set Due Date
+       ↓
+Show Summary
+       ↓
+Issue Book
+       ↓
+Create Transaction
+       ↓
+Decrease Available Copies
+       ↓
+Success
+
+# SUCCESS DIALOG
+
++---------------------------------------------+
+|             ✓ Book Issued                  |
+|                                             |
+| Book: Python Programming                    |
+| Borrower: Rahul Kumar                      |
+|                                             |
+| Issue ID: LIB-2026-0042                    |
+| Due Date: 23/08/2026                       |
+|                                             |
+| [ View Transaction ]   [ Done ]             |
++---------------------------------------------+
+
+# VALIDATION
+
+Check:
+
+1. Borrower selected
+2. Book selected
+3. Book is available
+4. Due date is valid
+5. Borrower hasn't exceeded borrowing limit
+6. Book isn't already issued to the same borrower
+7. All required information exists
+
+# BORROWING LIMIT
+
+For example, you can configure:
+Maximum active books: 3
+
+If Rahul already has 3 books:
+⚠ Borrowing Limit Reached
+
+This student already has 3 active books.
+
+Return an existing book before issuing another.
+
+This is a good database/business-rule feature.
+
+# STUDENT'S CURRENT BOOKS
+
+When selecting a student, optionally display:
+
+CURRENTLY BORROWED
+
+Python Basics        Due: 12 Aug
+DBMS Fundamentals    Due: 18 Aug
+
+Active Books: 2 / 3
+
+This lets the librarian make a decision without leaving the screen.
+
+# NAVIGATION
+
+Library
+   │
+   ▼
+Issue Book
+   │
+   ├── Select Student
+   │
+   ├── Select Book
+   │
+   ├── Check Availability
+   │
+   └── Issue
+          │
+          ▼
+       Success
+          │
+          ▼
+    Library Dashboard
+
+# RESUME-LEVEL FEATURES ⭐
+
+1. Add after the basic version:
+2. Automatic due-date calculation
+3. Borrowing limits
+4. Barcode/ISBN scanning
+5. Student borrowing history
+6. Automatic overdue detection
+7. Return reminders
+8. Digital transaction receipt
+9. Library analytics

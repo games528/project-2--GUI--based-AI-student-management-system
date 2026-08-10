@@ -1,0 +1,12 @@
+QR code for student ID
+barcode support
+face recognition attendance
+webcam capture
+email report cards
+SMS notification integration
+cloud backup
+activity logs
+audit trail
+undo/redo 
+keyboard shortcuts
+auto update checking

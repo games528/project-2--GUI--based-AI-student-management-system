@@ -1,0 +1,134 @@
+# PURPOSE
+
+1. creates a new user account
+2. store user information securely in the database
+
+# WIREFRAME 
+
++--------------------------------------------------------------------------------+
+| AI STUDENT MANAGEMENT SYSTEM                                 🌙 Dark Mode      |
++--------------------------------------------------------------------------------+
+
+                           Create New Account
+
+        Full Name
+        +------------------------------------------------------+
+        |                                                      |
+        +------------------------------------------------------+
+
+        Email
+        +------------------------------------------------------+
+        |                                                      |
+        +------------------------------------------------------+
+
+        Phone Number
+        +------------------------------------------------------+
+        |                                                      |
+        +------------------------------------------------------+
+
+        Username
+        +------------------------------------------------------+
+        |                                                      |
+        +------------------------------------------------------+
+
+        Password
+        +------------------------------------------------------+
+        | ***************                                      |
+        +------------------------------------------------------+
+
+        Confirm Password
+        +------------------------------------------------------+
+        | ***************                                      |
+        +------------------------------------------------------+
+
+        Role
+        [ ▼ Select Role ]
+
+        ☑ I agree to the Terms & Conditions
+
+              +--------------------------+
+              |      CREATE ACCOUNT      |
+              +--------------------------+
+
+                 Already have an account?
+                      [ Login ]
+---------------------------------------------------------------------------------
+
+# UI COMPONENTS
+
+1. app logo 
+2. page title 
+3. full name field
+4. email field
+5. phone number field
+6. username field
+7. password field
+8. confirm password field
+9. show/hide password
+10. role dropdown
+11. terms and Conditions checkbox
+12. create account button 
+13. login link
+14. theme toggle
+
+# LAYOUT
+
+1. header with app name and theme toggle 
+2. centered registeration form
+3. footer with version and copyright
+
+# BUTTON ACTIONS
+
+1. create account ---> validate all fields and save the account
+2. login ---> return to the login screen 
+3. show password ---> toggle password visibility
+
+# VALIDATION
+
+1. all fields are required 
+2. full name must contain only valid characters
+3. email must be in a valid format
+4. phone number must be 10 digits
+5. username must be unique
+6. password should be at least 8 characters and include uppercase,lowercase, a number, and a special character 
+7. password and confirm password must match
+8. a role must be selected 
+9. terms and Conditions must be accepted
+
+# SUCCESS MESSAGE 
+
+Account created successfully,
+you can now log in
+
+# ERROR MESSAGES 
+
+1. username already exists
+2. email already registered
+3. passwords do not match
+4. please accept the terms and Conditions
+5. invalid email address
+
+# NAVIGATION FLOW
+
+Login
+   │
+   ▼
+Register
+   │
+   ├── Create Account → Login
+   └── Back → Login
+
+
+# UX IMPROVEMENTS 
+
+1. password strength indicator 
+2. real time validation while typing
+3. show green for valid fields and red for invalid ones 
+4. automatically focus on the next field after pressing enter
+5. display a loading spinner while creating the account
+
+# ESTIMATED BUILD TIME 
+
+1. UI design: 1 hour
+2. validation logic: 1-2 hours
+3. database integration: 1 hour

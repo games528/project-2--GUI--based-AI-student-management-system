@@ -1,0 +1,5 @@
+change theme
+font size
+backup settings
+notification settings
+language settings

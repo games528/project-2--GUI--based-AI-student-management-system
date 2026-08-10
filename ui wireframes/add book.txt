@@ -1,0 +1,252 @@
+THIS SCREEN IS USED TO ADD A NEW BOOK AND ITS INVENTORY INFORMATION TO THE LIBRARY.
+
+# PURPOSE
+
+Admin/library staff can enter:
+
+1. Book details
+2. ISBN
+3. Author/publisher
+4. Category
+5. Publication information
+6. Number of copies
+7. Shelf/location
+8. Book status
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Add New Book                                                          |
+|                      |                                                                         |
+| 🏠 Dashboard         |  BOOK INFORMATION                                                      |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  Book ID          [ Auto Generated 🔒 ]                             |
+| 📚 Courses           |  ISBN             [________________________]                        |
+| 📅 Attendance        |  Title            [________________________]                        |
+| 📝 Marks             |  Subtitle        [________________________] (Optional)              |
+| 💰 Fees              |                                                                         |
+| 📖 Library     ←     |  AUTHOR & PUBLISHER                                                    |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  Author           [________________________]                        |
+| 🤖 AI Assistant      |  Publisher        [________________________]                        |
+| 🔔 Notifications     |  Publication Year [________]                                        |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  CLASSIFICATION                                                        |
+| 🚪 Logout            |                                                                         |
+|                      |  Category         [▼ Select Category]                              |
+|                      |  Language         [▼ Select Language]                              |
+|                      |                                                                         |
+|                      |  INVENTORY                                                             |
+|                      |                                                                         |
+|                      |  Number of Copies [________]                                       |
+|                      |  Shelf            [________________________]                        |
+|                      |  Location         [________________________]                        |
+|                      |                                                                         |
+|                      |  DESCRIPTION                                                           |
+|                      |                                                                         |
+|                      |  [________________________________________________________]             |
+|                      |  [________________________________________________________]             |
+|                      |                                                                         |
+|                      |  STATUS                                                                 |
+|                      |  (●) Available    ( ) Inactive                                   |
+|                      |                                                                         |
+|                      |  [ Cancel ]       [ Reset ]          [ ✓ Save Book ]                  |
++----------------------+-------------------------------------------------------------------------+
+
+# BOOK ID
+
+Generate automatically:
+B001
+B002
+B003
+
+The admin shouldn't manually enter this.
+Book ID: B001 🔒
+
+# ISBN
+
+ISBN
+[ 978XXXXXXXXXX ]
+You can validate the ISBN format later.
+
+# BOOK INFORMATION
+
+Title
+Example:
+Python Programming
+
+Subtitle
+Optional:
+An Introduction to Programming
+
+# AUTHOR & PUBLISHER
+
+Author
+[________________________]
+
+Publisher
+[________________________]
+
+Publication Year
+[ 2025 ]
+
+You can allow multiple authors later if needed.
+
+# CLASSIFICATION
+
+Category
+[▼ Select Category]
+
+Programming
+Artificial Intelligence
+Database
+Mathematics
+Physics
+Computer Science
+Other
+
+Language
+[▼ English]
+You can add Hindi and other languages later.
+
+# INVENTORY
+
+This is important.
+Number of Copies
+[ 10 ]
+
+Shelf
+[ A-12 ]
+
+Location
+[ Central Library ]
+
+If:
+Copies = 10
+
+the database initially stores:
+Total Copies = 10
+Available Copies = 10
+Issued Copies = 0
+
+When a book is issued:
+Available = 9
+Issued = 1
+
+# DESCRIPTION
+
+Description
+
++-------------------------------------------------------+
+| Enter a short description of the book...              |
+|                                                       |
+|                                                       |
++-------------------------------------------------------+
+
+Optional but useful for the Book Details screen.
+
+# STATUS
+
+(●) Available
+( ) Inactive
+
+Normally default to Available.
+
+# VALIDATION
+
+Check:
+
+1. Title required
+2. Author required
+3. ISBN format valid
+4. ISBN isn't already registered
+5. Publication year valid
+6. Category selected
+7. Number of copies > 0
+8. Shelf/location entered if required
+
+# ERROR MESSAGES
+
+❌ Book title is required.
+
+❌ Author name is required.
+
+❌ Invalid ISBN.
+
+❌ This ISBN already exists.
+
+❌ Number of copies must be greater than 0.
+
+❌ Please select a category.
+
+# SAVE FLOW
+
+Fill Book Information
+        ↓
+Validate
+        ↓
+Check ISBN
+        ↓
+Create Book ID
+        ↓
+Create Inventory
+        ↓
+Save to Database
+        ↓
+Success
+
+# SUCCESS DIALOG
+
++------------------------------------------+
+|             ✓ Success                    |
+|                                          |
+| Book added successfully!                 |
+|                                          |
+| Book ID: B021                            |
+| Title: Python Programming                |
+| Copies: 10                               |
+|                                          |
+| [ View Book ]       [ Done ]             |
++------------------------------------------+
+
+# RESET CONFIRMATION
+
++--------------------------------------+
+|         Reset Book Form?             |
+|                                      |
+| All entered information will be      |
+| cleared.                             |
+|                                      |
+| [ Cancel ]       [ Reset ]            |
++--------------------------------------+
+
+# NAVIGATION
+
+Library Management
+       │
+       ▼
+    Add Book
+       │
+   ┌───┼──────────┐
+   ▼   ▼          ▼
+ Save Reset      Cancel
+   │                │
+   ▼                ▼
+Success        Library List
+
+# RESUME-LEVEL FEATURES ⭐
+
+Add later:
+
+1. ISBN validation
+2. ISBN/barcode scanning
+3. Book cover upload
+4. Multiple-copy tracking
+5. Shelf mapping
+6. Automatic book ID
+7. Duplicate-book detection
+8. Import books through CSV/Excel
+9. Book cover preview

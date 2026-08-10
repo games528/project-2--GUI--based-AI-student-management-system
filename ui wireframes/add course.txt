@@ -1,0 +1,249 @@
+THIS SCREEN IS USED BY THE ADMIN TO CREATE A NEW COURSE/SUBJECT IN THE SYSTEM.
+
+# PURPOSE
+
+admin can define:
+1. course identify
+2. department
+3. semester
+4. credits
+5. description
+6. teacher assignment 
+7. student capacity
+8. course status
+
+# FULL WIREFRAME 
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Add New Course                                                        |
+|                      |                                                                         |
+| 🏠 Dashboard         |  COURSE INFORMATION                                                    |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  Course Code       [________________________]                        |
+| 📚 Courses     ←     |  Course Name       [________________________]                        |
+| 📅 Attendance        |  Short Name        [________________________]                        |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  Department        [▼ Select Department]                             |
+| 📖 Library           |  Semester          [▼ Select Semester]                               |
+| 📊 Reports           |  Credits           [▼ Select Credits]                                |
+| 📈 Analytics         |                                                                         |
+| 🤖 AI Assistant      |  COURSE DESCRIPTION                                                    |
+| 🔔 Notifications     |                                                                         |
+| ⚙ Settings           |  [________________________________________________________]             |
+| 👤 Profile           |  [________________________________________________________]             |
+| 🚪 Logout            |                                                                         |
+|                      |  COURSE ASSIGNMENT                                                     |
+|                      |                                                                         |
+|                      |  Teacher           [▼ Select Teacher]                               |
+|                      |  Maximum Students  [________]                                       |
+|                      |                                                                         |
+|                      |  STATUS                                                                 |
+|                      |  (●) Active      ( ) Draft      ( ) Inactive                         |
+|                      |                                                                         |
+|                      |  [ Cancel ]             [ Reset ]         [ ✓ Save Course ]           |
++----------------------+-------------------------------------------------------------------------+
+
+# COURSE INFORMATION
+
+course code 
+unique indentifier:
+C101
+it should be unique in your database
+
+course name
+example:
+Artificial Intelligence
+
+short name
+example:
+AI
+useful for tables and timetable displays
+
+# ACADEMIC INFORMATION
+
+department
+
+[▼ Select Department]
+
+Computer Science
+Artificial Intelligence
+Mathematics
+Physics
+
+semester
+
+[▼ Select Semester]
+
+1
+2
+3
+4
+5
+6
+
+credits
+
+[▼ Select Credits]
+
+1
+2
+3
+4
+5
+6
+
+# DESCRIPTION
+
+use a multi-line text box:
+
+Course Description
+
++-------------------------------------------------------+
+| Covers fundamental concepts of artificial            |
+| intelligence, search algorithms, machine learning... |
+|                                                       |
++-------------------------------------------------------+
+
+this can later appear on the course details screen 
+
+# TEACHER ASSIGNMENT
+
+Teacher
+
+[▼ Select Teacher]
+
+Amit Kumar — Computer Science
+Priya Sharma — AI
+Rahul Singh — Mathematics
+
+you can allow multiple teachers later if required
+
+# MAXIMUM STUDENTS 
+
+Maximum students
+[ 60 ]
+this can be used later for enrollment validation
+
+example:
+capacity: 52/60
+
+# COURSE STATUS
+
+status
+(.) Active
+( ) Draft
+( ) Inactive
+
+recommended default:
+Active
+
+# SAVE COURSE FLOW
+
+Fill Form
+    ↓
+Validate
+    ↓
+Check Course Code
+    ↓
+Save Course
+    ↓
+Assign Teacher
+    ↓
+Success
+    ↓
+Course Management
+
+# VALIDATION
+
+check:
+1. course code isn't empty
+2. course code is unique
+3. course name is required
+4. department is selected
+5. semester is selected
+6. credits are valid 
+7. Maximum students count is valid
+8. teacher exists if assignment is required
+
+# ERROR MESSAGES 
+
+❌ course code is required
+❌ course code already exists
+❌ course name is required
+❌ please Select a department
+❌ please Select a semester
+❌ invalid student capacity
+
+# SUCCESS DIALOG
+
++------------------------------------------+
+|             ✓ Success                    |
+|                                          |
+| Course created successfully!             |
+|                                          |
+| Course Code: C104                        |
+| Course: Machine Learning                 |
+|                                          |
+|        [ View Course ]   [ Done ]        |
++------------------------------------------+
+
+# RESET 
+
+reset should clear the Form
+
+before clearing, you can ask:
+
++--------------------------------------+
+|        Reset Course Form?            |
+|                                      |
+| All entered information will be       |
+| cleared.                             |
+|                                      |
+| [ Cancel ]       [ Reset ]            |
++--------------------------------------+
+
+# UNSAVED CHANGES
+
+if the admin clicks back:
++---------------------------------------------+
+|          ⚠ Unsaved Changes                  |
+|                                             |
+| You have unsaved course information.        |
+|                                             |
+| [ Stay ] [ Save ] [ Leave ]                 |
++---------------------------------------------+
+
+# NAVIGATION
+
+Course Management
+       │
+       ▼
+   Add Course
+       │
+   ┌───┼───────────┐
+   ▼   ▼           ▼
+ Save Reset       Cancel
+   │                 │
+   ▼                 ▼
+Success         Course List
+
+# RESUME LEVEL FEATURES
+
+later you can add:
+
+1. course prequisite selection
+2. multiple teacher assignment
+3. course capacity tracking
+4. course syllabus upload
+5. course thumbnail/icon
+6. automatic course code generation
+7. course creation activity log 
+8. AI generated course description
+
+
+
+
+

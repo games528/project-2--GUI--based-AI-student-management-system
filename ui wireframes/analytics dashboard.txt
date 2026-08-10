@@ -1,0 +1,270 @@
+THIS IS THE MAIN DATA VISUALIZATION AND PERFORMANCE ANALYSIS SCREEN OF YOUR AI STUDENT MANAGEMENT SYSTEM.
+
+UNLIKE THE REPORTS SCREEN, WHICH GENERATES SPECIFIC REPORTS, ANALYTICS GIVES A LIVE VISUAL OVERVIEW OF WHAT'S HAPPENING ACROSS THE COLLEGE.
+
+# PURPOSE
+
+Admin should be able to see:
+
+1. Student performance
+2. Attendance trends
+3. Marks trends
+4. Fee collection
+5. Course performance
+6. Library usage
+7. At-risk students
+8. AI-generated insights
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Analytics Dashboard                                                   |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Overview                         [📅 This Semester ▼] [Export]       |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 📚 Courses           |  │ Students   │ │ Attendance │ │ Avg Marks  │ │ Fees Paid  │       |
+| 📅 Attendance        |  │   850      │ │   84.2%    │ │   76.4%    │ │   82%      │       |
+| 📝 Marks             |  │ +5.2% ↑    │ │ +2.1% ↑    │ │ +4.3% ↑    │ │ +6.8% ↑    │       |
+| 💰 Fees              |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  ATTENDANCE TREND                                                     |
+| 📈 Analytics    ←    |  ┌───────────────────────────────────────────────────────────────┐  |
+| 🤖 AI Assistant      |  │                    📈 Line Chart                            │  |
+| 🔔 Notifications     |  │                                                               │  |
+| ⚙ Settings           |  │       ╱╲      ╱────╲                                      │  |
+| 👤 Profile           |  │  ────╯  ╲────╯      ╲───                                   │  |
+| 🚪 Logout            |  │                                                               │  |
+|                      |  └───────────────────────────────────────────────────────────────┘  |
+|                      |                                                                         |
+|                      |  PERFORMANCE             COURSE PERFORMANCE                          |
+|                      |  ┌────────────────────┐  ┌───────────────────────────────────┐      |
+|                      |  │ 📊 Avg Marks       │  │ Python       █████████ 88%       │      |
+|                      |  │                    │  │ DBMS         ████████   82%       │      |
+|                      |  │       76.4%        │  │ Mathematics  ███████    74%       │      |
+|                      |  │                    │  │ Physics      ██████     69%       │      |
+|                      |  └────────────────────┘  └───────────────────────────────────┘      |
+|                      |                                                                         |
+|                      |  ⚠ AT-RISK STUDENTS        🤖 AI INSIGHTS                            |
+|                      |  ┌────────────────────┐    ┌───────────────────────────────────┐      |
+|                      |  │ Aman Singh   68%   │    │ • Attendance improved 4%       │      |
+|                      |  │ Ravi Kumar   61%   │    │ • 12 students need attention  │      |
+|                      |  │ Mohan Singh  59%   │    │ • Python performance is high   │      |
+|                      |  └────────────────────┘    └───────────────────────────────────┘      |
++----------------------+-------------------------------------------------------------------------+
+
+# TOP TIME FILTER
+
+At the top:
+[📅 This Semester ▼]
+
+Options:
+Today
+This Week
+This Month
+This Semester
+This Year
+Custom Range
+
+All analytics should update when the period changes.
+
+# OVERVIEW CARDS
+
+Total Students
+850
+Students
+
+↑ 5.2%
+
+Average Attendance
+84.2%
+Attendance
+
+↑ 2.1%
+
+Average Marks
+76.4%
+Average Marks
+
+↑ 4.3%
+
+Fee Collection
+82%
+Collected
+
+↑ 6.8%
+
+These are calculated from your database.
+
+# ATTENDANCE TREND CHART
+
+Main chart:
+Attendance %
+100 ┤
+ 90 ┤          ╭───╮
+ 80 ┤     ╭────╯   ╰────╮
+ 70 ┤─────╯              ╰──
+ 60 ┤
+    └────────────────────────
+      Week1 Week2 Week3 Week4
+
+Shows whether attendance is improving or declining.
+
+# PERFORMANCE ANALYTICS
+
+Display average marks:
+Average Marks
+
+76.4%
+
+Highest: 98%
+Lowest: 32%
+
+Later you can make this a chart.
+
+# COURSE PERFORMANCE
+
+Example:
+COURSE PERFORMANCE
+
+Python          █████████  88%
+DBMS            ████████   82%
+Mathematics     ███████    74%
+Physics         ██████     69%
+
+Clicking a course can open its detailed analytics.
+
+# AT-RISK STUDENTS ⭐
+
+This section identifies students who may need academic attention.
+
+⚠ AT-RISK STUDENTS
+
+Student        Attendance    Avg Marks
+---------------------------------------
+Aman Singh        68%           54%
+Ravi Kumar        61%           48%
+Mohan Singh       59%           51%
+
+[ View All ]
+
+Important: Don't make the AI automatically label a student as "bad" or make high-stakes decisions. It should flag patterns for staff review.
+
+# AI INSIGHTS ⭐⭐⭐
+
+This is the main AI feature on this screen.
+🤖 AI INSIGHTS
+
+┌───────────────────────────────────────────────┐
+│ 📈 Attendance                                │
+│ Overall attendance increased by 2.1%.        │
+│                                               │
+│ ⚠ Academic Performance                       │
+│ 12 students have both low attendance and    │
+│ below-average marks.                         │
+│                                               │
+│ 📚 Course Performance                         │
+│ Python currently has the highest average     │
+│ score among tracked courses.                 │
+│                                               │
+│ [ View Detailed AI Analysis ]                │
+└───────────────────────────────────────────────┘
+
+The AI should generate these observations from actual database statistics.
+
+# FEE ANALYTICS
+
+Later include:
+FEE COLLECTION
+
+100% ┤
+ 80% ┤       ╭────╮
+ 60% ┤   ╭───╯    ╰───
+ 40% ┤───╯
+     └──────────────────
+       Jun  Jul  Aug
+
+Useful metrics:
+
+1. Total collected
+2. Pending
+3. Overdue
+4. Monthly collection
+5. Collection percentage
+
+# LIBRARY ANALYTICS
+
+Add a small section:
+📖 LIBRARY
+
+Total Books       850
+Issued            210
+Overdue            20
+
+Most Borrowed:
+1. Python Programming
+2. DBMS Fundamentals
+3. AI Fundamentals
+
+# EXPORT
+
+Top-right:
+[ Export ▼ ]
+
+├── PDF
+├── Excel
+└── CSV
+
+Export the currently selected analytics period.
+
+# LOADING STATE
+
+Because analytics may require multiple database queries:
+┌──────────────────────────────────────────┐
+│                                          │
+│          Loading Analytics...            │
+│                                          │
+│              ⟳                           │
+│                                          │
+└──────────────────────────────────────────┘
+
+# NO DATA STATE
+
+             📊
+
+       Not Enough Data
+
+Analytics will appear once
+sufficient academic data is available.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Analytics
+    │
+    ├── Attendance Analytics
+    ├── Marks Analytics
+    ├── Course Analytics
+    ├── Fee Analytics
+    ├── Library Analytics
+    └── AI Insights
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+Add these after your core system works:
+
+1. Interactive charts
+2. Date-range filtering
+3. Course comparison
+4. Semester comparison
+5. Student performance trends
+6. Attendance prediction
+7. Early-warning system
+8. AI-generated insights
+9. Exportable analytics
+10. Drill-down from chart → students → individual profile

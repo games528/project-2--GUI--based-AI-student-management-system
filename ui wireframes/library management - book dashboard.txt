@@ -1,0 +1,242 @@
+THIS IS THE MAIN SCREEN FOR MANAGING BOOKS, AVAILABILITY, ISSUED BOOKS, RETURNS, AND OVERDUE BOOKS.
+
+# PURPOSE
+
+Admin/library staff can:
+
+1. View all books
+2. Search books
+3. Filter books
+4. Add books
+5. Edit book details
+6. Issue books
+7. Return books
+8. Track overdue books
+9. View available copies
+10. Generate library reports
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Library Management                                                     |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Library Overview                                                      |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 📚 Courses           |  │Total Books │ │ Available  │ │ Issued     │ │ Overdue    │       |
+| 📅 Attendance        |  │    850     │ │    620     │ │    210     │ │     20     │       |
+| 📝 Marks             |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| 💰 Fees              |                                                                         |
+| 📖 Library     ←     |  [ 🔍 Search title / author / ISBN................ ]                |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  Category [▼]  Status [▼]  Author [▼]  [Apply Filters]            |
+| 🤖 AI Assistant      |                                                                         |
+| 🔔 Notifications     |  [+ Add Book]  [Issue Book]  [Return Book]  [Export ▼]             |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  -----------------------------------------------------------------------|
+| 🚪 Logout            |  | Book ID | Title | Author | Copies | Available | Status | Action |
+|                      |  -----------------------------------------------------------------------|
+|                      |  | B001 | Python Basics | Harry | 10 | 7 | Available | 👁 ⋮ |
+|                      |  | B002 | AI Intro      | John  | 5  | 0 | Issued    | 👁 ⋮ |
+|                      |  | B003 | DBMS          | Smith | 8  | 6 | Available | 👁 ⋮ |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |              [ < ] 1 2 3 4 [ > ]                                  |
++----------------------+-------------------------------------------------------------------------+
+
+# OVERVIEW CARDS
+
+Total Books
+850
+Total Books
+
+Available
+620
+Available
+
+Issued
+210
+Currently Issued
+
+Overdue
+20
+Overdue
+
+These should be calculated dynamically from the database.
+
+# SEARCH
+
+Search by:
+
+1. Book title
+2. Author
+3. ISBN
+4. Book ID
+🔍 [ Search books................................ ]
+
+Example:
+Search: Python
+
+→ Python Basics
+→ Python Programming
+→ Advanced Python
+
+# FILTERS
+
+Category     [▼ All Categories]
+
+Status       [▼ Available / Issued / Overdue]
+
+Author       [▼ All Authors]
+
+[ Apply Filters ]    [ Clear ]
+
+# BOOK TABLE
+
+Book ID    |     Title      |     Author    |      Copies    |     Available    |      Status      |     Action
+B001       | Python Basics  |     Harry     |        10      |         7        |    🟢 Available  |      👁 ⋮
+B002       | AI Intro       |     John      |         5      |         0        |    🟠 Issued     |     👁 ⋮
+B003       | DBMS           |     Smith     |         8      |         6        |    🟢 Available  |     👁 ⋮
+
+# ACTION MENU
+
+Click ⋮:
++----------------------------+
+| 👁 View Book               |
+| ✏ Edit Book               |
+| 📤 Issue Book              |
+| 📥 Return Book             |
+| 📜 Borrowing History       |
+| 🔴 Remove Book              |
++----------------------------+
+
+# ADD BOOK
+
+[ + Add Book ]
+
+This opens the Add Book screen.
+
+Information will include:
+
+1. Book ID
+2. ISBN
+3. Title
+4. Author
+5. Publisher
+6. Category
+7. Publication year
+8. Number of copies
+9. Shelf/location
+
+# ISSUE BOOK
+
+[ Issue Book ]
+
+Opens:
++---------------------------------------------+
+|              Issue Book                     |
+|                                             |
+| Student       [▼ Select Student]            |
+| Book          [▼ Select Book]               |
+|                                             |
+| Issue Date    [ 09/08/2026 📅 ]             |
+| Due Date      [ 23/08/2026 📅 ]             |
+|                                             |
+| [ Cancel ]           [ ✓ Issue Book ]       |
++---------------------------------------------+
+
+The system should automatically decrease the available-copy count.
+
+# RETURN BOOK
+
+[ Return Book ]
+
+Example:
++---------------------------------------------+
+|              Return Book                    |
+|                                             |
+| Student: Rahul Kumar                        |
+| Book: Python Basics                         |
+|                                             |
+| Issue Date: 01/08/2026                      |
+| Due Date:   08/08/2026                      |
+| Return Date: 09/08/2026                     |
+|                                             |
+| Status: 🔴 1 day overdue                    |
+|                                             |
+| [ Cancel ]          [ ✓ Return Book ]       |
++---------------------------------------------+
+
+Again, don't make real-world fines complicated initially. Just record the borrowing/return data.
+
+# OVERDUE BOOKS
+
+A dedicated section can show:
+
+OVERDUE BOOKS
+
+Student       Book              Due Date       Days Overdue
+------------------------------------------------------------
+Rahul Kumar   Python Basics     05 Aug         4 days
+Aman Singh    AI Fundamentals   07 Aug         2 days
+
+Later, connect this with notifications.
+
+# EMPTY STATE
+
++--------------------------------------------------+
+
+                     📖
+
+                No Books Found
+
+          Add a book to your library.
+
+                  [ + Add Book ]
+
++--------------------------------------------------+
+
+# SUCCESS MESSAGES
+
+✅ Book added successfully.
+
+✅ Book issued successfully.
+
+✅ Book returned successfully.
+
+⚠️ Book is overdue.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Library Management
+    │
+    ├── Add Book ─────────► Add Book
+    │
+    ├── View Book ────────► Book Details
+    │
+    ├── Issue Book ───────► Issue Book
+    │
+    ├── Return Book ──────► Return Book
+    │
+    └── History ──────────► Borrowing History
+
+# RESUME-LEVEL FEATURES ⭐
+
+After the basic library works:
+
+1. ISBN search
+2. Multiple-copy tracking
+3. Borrowing history
+4. Automatic due-date calculation
+5. Overdue detection
+6. Library analytics
+7. PDF/Excel reports
+8. Book availability indicator
+9. Automated return reminders
+10. Fine calculation as an optional feature

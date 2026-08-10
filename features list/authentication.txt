@@ -1,0 +1,9 @@
+login
+signup
+logout
+forgot password
+change password
+admin authentication 
+teacher authentication
+student authentication
+role-based dashboard

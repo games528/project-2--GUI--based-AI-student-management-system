@@ -1,0 +1,185 @@
+THIS SCREEN ALLOWS THE ADMIN TO MODIFY AN EXISTING TEACHER'S INFORMATION WITHOUT CREATING A NEW TEACHER RECORD.
+
+# PURPOSE
+
+Admin can:
+
+1. Update teacher details
+2. Change contact information
+3. Update qualification/specialization
+4. Change department
+5. Add/remove assigned subjects
+6. Change profile photo
+7. Save or discard changes
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Edit Teacher                                                           |
+|                      |  Teacher ID: TCH2026001                                                 |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │                    PROFILE PHOTO                                  │  |
+| 👨‍🏫 Teachers   ←     |  │                  [ Teacher Photo ]                               │  |
+| 📚 Courses           |  │              [ Change Photo ]                                    │  |
+| 📅 Attendance        |  └─────────────────────────────────────────────────────────────────┘  |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  PERSONAL INFORMATION                                                   |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  Full Name        [ Amit Kumar________________ ]                      |
+| 📈 Analytics         |  Date of Birth    [ 15/08/1985 ]                                    |
+| 🤖 AI Assistant      |  Gender           [ Male ▼ ]                                         |
+| 🔔 Notifications     |  Teacher ID       [ TCH2026001 🔒 ]                                  |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  CONTACT INFORMATION                                                    |
+| 🚪 Logout            |  Email            [ amit@email.com________ ]                          |
+|                      |  Phone            [ 9876543210____________ ]                          |
+|                      |                                                                         |
+|                      |  PROFESSIONAL INFORMATION                                               |
+|                      |                                                                         |
+|                      |  Department       [ Computer Science ▼ ]                             |
+|                      |  Qualification    [ M.Tech________________ ]                          |
+|                      |  Specialization   [ Artificial Intelligence____ ]                    |
+|                      |  Joining Date     [ 15/07/2020 ]                                    |
+|                      |                                                                         |
+|                      |  ASSIGNED SUBJECTS                                                      |
+|                      |                                                                         |
+|                      |  Python       [✓]       AI          [✓]                             |
+|                      |  DBMS         [ ]       Mathematics [ ]                             |
+|                      |                                                                         |
+|                      |  [ Cancel ]       [ Reset Changes ]       [ ✓ Save Changes ]          |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# LOCKED INFORMATION
+
+The Teacher ID should be read-only:
+Teacher ID: TCH2026001 🔒
+
+This prevents accidental changes to the unique identifier.
+
+# EDITABLE SECTIONS
+
+Personal:
+
+1. Name
+2. DOB
+3. Gender
+4. Photo
+
+Contact:
+
+1. Email
+2. Phone
+3. Alternate phone
+
+Professional:
+
+1. Department
+2. Qualification
+3. Specialization
+4. Joining date
+
+Subjects:
+
+1. Add subjects
+2. Remove subjects
+3. Assign multiple subjects
+
+# SUBJECT ASSIGNMENT
+
+A better UI is a dual-list selector:
+AVAILABLE SUBJECTS             ASSIGNED SUBJECTS
+
+☐ DBMS                         ✓ Python
+☐ Mathematics         →        ✓ Artificial Intelligence
+☐ Networks
+☐ Statistics
+
+Buttons:
+[ Add → ]
+[ ← Remove ]
+This gives you more control than simple checkboxes.
+
+# SAVE CHANGES
+
+Modify Data
+     ↓
+Save Changes
+     ↓
+Validate
+     ↓
+Update Database
+     ↓
+Update Subject Assignments
+     ↓
+Success
+
+# UNSAVED CHANGES
+
+If the admin tries to leave:
++---------------------------------------------+
+|          ⚠ Unsaved Changes                  |
+|                                             |
+| You have changes that haven't been saved.   |
+|                                             |
+| [ Stay ] [ Save Changes ] [ Leave ]         |
++---------------------------------------------+
+
+# VALIDATION
+
+Check:
+
+1. Required fields
+2. Valid email
+3. Valid phone
+4. Valid department
+5. Valid joining date
+6. At least one assigned subject
+7. Email isn't already used by another teacher
+
+# SUCCESS MESSAGE
+
++--------------------------------------+
+|             ✓ Success                |
+|                                      |
+| Teacher information updated.         |
+|                                      |
+|             [ Done ]                 |
++--------------------------------------+
+
+# RESET CHANGES
+
+Reset should restore the original database values, not create a blank form.
+Discard all changes?
+
+[ Cancel ]       [ Reset Changes ]
+
+# NAVIGATION
+
+Teacher List
+     │
+     ▼
+Edit Teacher
+     │
+ ┌───┼────────────┐
+ ▼   ▼            ▼
+Save Reset       Cancel
+ │                 │
+ ▼                 ▼
+Success        Teacher List
+
+# RESUME-LEVEL FEATURES
+
+Add later:
+
+1. Last updated timestamp
+2. Updated by admin
+3. Change history
+4. Real-time validation
+5. Unsaved changes detection
+6. Subject assignment management
+7. Profile image preview

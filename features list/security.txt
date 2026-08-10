@@ -1,0 +1,5 @@
+password hashing
+input validation
+SQL injection prevention
+duplicate entry prevention
+session timeout

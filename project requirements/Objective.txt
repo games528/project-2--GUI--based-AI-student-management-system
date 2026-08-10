@@ -1,0 +1,8 @@
+Build a professional GUI based application to:
+
+1. manage student records
+2. store data securely
+3. search and filter students
+4. generate repots 
+5. include AI assisted features
+6. demonstrate python software engineering skills

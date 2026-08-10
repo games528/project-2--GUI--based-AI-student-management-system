@@ -1,0 +1,11 @@
+login page
+dashboard
+sidebar navigation
+student table
+search bar
+add student form
+edit form
+delete confirmation
+statistics cards
+dialog boxes
+dark/light mode 

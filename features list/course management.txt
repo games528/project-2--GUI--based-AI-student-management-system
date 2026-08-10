@@ -1,0 +1,8 @@
+add course
+delete course
+update course
+view courses
+assign teacher
+assign students
+course credits
+course duration

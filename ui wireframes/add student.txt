@@ -1,0 +1,232 @@
+THIS SCREEN IS USED BY THE ADMINS TO CREATE A COMPLETE STUDENT RECORD 
+
+# PURPOSE
+
+1. The admin should be able to enter:
+2. Personal information
+3. Contact information
+4. Academic information
+5. Guardian information
+6. Address
+7. Student photo
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Add New Student                                                       |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │                    STUDENT PHOTO                                  │  |
+| 👨‍🏫 Teachers         |  │                       [ 📷 ]                                      │  |
+| 📚 Courses           |  │                    [ Upload ]                                    │  |
+| 📅 Attendance        |  └─────────────────────────────────────────────────────────────────┘  |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  PERSONAL INFORMATION                                                   |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  Full Name        [________________________]                          |
+| 📈 Analytics         |  Date of Birth    [__/__/____]                                       |
+| 🤖 AI Assistant      |  Gender           [▼ Select]                                          |
+| 🔔 Notifications     |  Student ID       [Auto Generated]                                   |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  CONTACT INFORMATION                                                    |
+| 🚪 Logout            |                                                                         |
+|                      |  Email            [________________________]                          |
+|                      |  Phone            [________________________]                          |
+|                      |                                                                         |
+|                      |  ACADEMIC INFORMATION                                                   |
+|                      |                                                                         |
+|                      |  Course           [▼ Select Course]                                 |
+|                      |  Semester         [▼ Select Semester]                               |
+|                      |  Admission Year   [▼ Select Year]                                   |
+|                      |                                                                         |
+|                      |  GUARDIAN INFORMATION                                                   |
+|                      |                                                                         |
+|                      |  Guardian Name    [________________________]                          |
+|                      |  Guardian Phone   [________________________]                          |
+|                      |                                                                         |
+|                      |  ADDRESS                                                                 |
+|                      |                                                                         |
+|                      |  Address          [___________________________________________]         |
+|                      |                   [___________________________________________]         |
+|                      |                                                                         |
+|                      |  [ Cancel ]                         [ Reset ]     [ ✓ Save Student ]   |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# FORM SECTIONS
+
+A. Student Photo
+
+1. Upload image
+2. Preview image
+3. Remove image
+[ Upload Photo ]
+
+        ↓
+
+[   Photo   ]  [Remove]
+
+B. Personal Information
+
+Fields:
+1. Student ID — automatically generated
+2. Full Name
+3. Date of Birth
+4. Gender
+
+Student ID should not be manually entered to prevent duplicate IDs.
+
+Example:
+Student ID: STU2026001
+
+C. Contact Information
+
+1. Email
+2. Phone number
+3. Optional alternate phone
+
+D. Academic Information
+
+1. Course
+2. Department
+3. Semester
+4. Admission year
+5. Section
+Example:
+Course       [ BSc AI & Data Science ▼ ]
+Department   [ Computer Science ▼ ]
+Semester     [ 1 ▼ ]
+Section      [ A ▼ ]
+
+E. Guardian Information
+
+1. Guardian name
+2. Relationship
+3. Guardian phone
+4. Guardian email (optional)
+
+F. Address
+
+Use a multi-line text box.
+
+Address
++------------------------------------------------+
+|                                                |
+|                                                |
++------------------------------------------------+
+
+# BUTTONS 
+
+✓ Save Student
+Flow:
+Fill Form
+   ↓
+Validate
+   ↓
+Save to Database
+   ↓
+Success Message
+   ↓
+Student Management
+
+Reset:
+Clears all entered information.
+
+Cancel:
+Returns to Student Management without saving.
+
+# VALIDATION 
+
+Before saving:
+1. Name cannot be empty.
+2. Date of birth must be valid.
+3. Email must have valid format.
+4. Phone number must be valid.
+5. Course must be selected.
+6. Semester must be selected.
+7. Guardian information must be valid.
+8.Duplicate student records should be prevented.
+
+# VALIDATION MESSAGES 
+
+❌ Full name is required.
+
+❌ Invalid email address.
+
+❌ Invalid phone number.
+
+❌ Please select a course.
+
+❌ Please select a semester.
+
+# SUCCESS DIALOG 
+
++------------------------------------------+
+|             ✓ Success                    |
+|                                          |
+| Student added successfully!              |
+|                                          |
+| Student ID: STU2026001                   |
+|                                          |
+|             [ View Student ]             |
+|             [ Done ]                     |
++------------------------------------------+
+
+# UX IMPROVEMENTS 
+
+For a polished application:
+1. Auto-generate Student ID.
+2. Use dropdowns instead of free-text fields where appropriate.
+3. Show real-time validation.
+4. Highlight invalid fields.
+5. Display image preview.
+6. Disable Save until required fields are valid.
+7. Warn before leaving with unsaved changes.
+8. Use tab/Enter navigation between fields.
+
+# DATABASE DATA
+
+When Save Student is clicked, the information can be stored in your students table.
+
+Conceptually:
+
+students
+│
+├── student_id
+├── name
+├── dob
+├── gender
+├── email
+├── phone
+├── course
+├── department
+├── semester
+├── admission_year
+├── section
+├── guardian_name
+├── guardian_relation
+├── guardian_phone
+├── address
+└── photo
+
+# NAVIGATION 
+
+Student Management
+        │
+        ▼
+   Add Student
+        │
+   ┌────┼─────────────┐
+   ▼    ▼             ▼
+ Save  Reset        Cancel
+   │                    │
+   ▼                    ▼
+Success             Student List
+   │
+   ▼
+Student List
+Progress
+7 / 32 screens completed.

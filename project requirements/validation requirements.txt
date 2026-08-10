@@ -1,0 +1,6 @@
+required fields cannot be empty
+valid email format
+valid phone number
+unique student ID
+marks within valid range
+attendance between 0-100 %

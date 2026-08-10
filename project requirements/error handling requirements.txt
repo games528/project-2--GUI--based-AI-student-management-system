@@ -1,0 +1,6 @@
+database connection errors
+invalid inputs
+duplicate student IDs 
+missing records
+import/export failures
+friendly error messages

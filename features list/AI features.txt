@@ -1,0 +1,10 @@
+AI chatbot for student queries
+AI performance analysis
+AI study recommendations
+AI attendance prediction
+AI marks prediction
+AI weak subject detection
+AI personalized feedback
+AI report summary
+AI homework suggestions
+AI career suggestions

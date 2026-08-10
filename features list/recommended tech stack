@@ -1,0 +1,9 @@
+language: python
+GUI: Custom Tkinter
+database: SQLite
+charts: matplotib
+PDF reports: reportlab
+Excel export: openPyXL
+images: pillow
+AI: Open AI API or a local AI model 
+authentication: bcrypt for password hashing 

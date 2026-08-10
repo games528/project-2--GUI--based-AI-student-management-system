@@ -1,0 +1,8 @@
+ fast performance
+ responsive GUI 
+ reliable operation 
+ easy navigation
+ maintainable code
+ modular architecture
+ proper error handling 
+ good documentation 

@@ -1,0 +1,211 @@
+THIS IS THE MAIN ATTENDANCE SCREEN. THE ADMIN/TEACHER CAN SELECT A COURSE, DATE, AND STUDENT LIST, THEN MARK ATTENDANCE.
+
+# PURPOSE
+
+The screen should allow:
+
+1. Select course/subject
+2. Select semester/section
+3. Select date
+4. View enrolled students
+5. Mark Present/Absent
+6. Mark everyone present/absent
+7. Search students
+8. Save attendance
+9. View attendance percentage
+10. Edit previously recorded attendance
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Attendance Management                                                 |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Today's Attendance                                                    |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  Course       [▼ Python                         ]                     |
+| 📚 Courses           |  Semester     [▼ 1                              ]                     |
+| 📅 Attendance   ←    |  Section      [▼ A                              ]                     |
+| 📝 Marks             |  Date         [ 09/08/2026 📅 ]                                  |
+| 💰 Fees              |                                                                         |
+| 📖 Library           |  [ 🔍 Search Student................ ]                            |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  [✓ Mark All Present]  [✕ Mark All Absent]                         |
+| 🤖 AI Assistant      |                                                                         |
+| 🔔 Notifications     |  -----------------------------------------------------------------------|
+| ⚙ Settings           |  | ID | Student Name | Present | Absent | Status |                    |
+| 👤 Profile           |  -----------------------------------------------------------------------|
+| 🚪 Logout            |  |101 | Rahul Kumar  |   ●     |   ○    | Present 🟢 |             |
+|                      |  |102 | Aman Singh   |   ○     |   ●    | Absent  🔴 |             |
+|                      |  |103 | Riya Sharma  |   ●     |   ○    | Present 🟢 |             |
+|                      |  |104 | Mohan Kumar  |   ●     |   ○    | Present 🟢 |             |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      | Present: 3     Absent: 1     Attendance: 75%                      |
+|                      |                                                                         |
+|                      | [ Cancel ]                         [ ✓ Save Attendance ]              |
++----------------------+-------------------------------------------------------------------------+
+
+# TOP FILTERS
+
+Course
+[▼ Select Course]
+
+Example:
+Python
+Artificial Intelligence
+DBMS
+Mathematics
+
+Semester
+[▼ Semester 1]
+
+Section
+[▼ Section A]
+
+Date
+Use a date picker:
+[ 09/08/2026 📅 ]
+
+# STUDENT ATTENDANCE TABLE
+
+Each student gets one row.
+ID      |    Student     |      Present     |        Absent     |    Status
+101     |    Rahul Kumar |         ●        |            ○      |    🟢 Present
+102     |    Aman Singh  |         ○        |            ●      |    🔴 Absent
+103     |    Riya Sharma |         ●        |            ○      |    🟢 Present
+
+Use radio buttons so the user can't accidentally select both Present and Absent.
+
+# MARK ALL BUTTONS
+
+Mark All Present
+[ ✓ Mark All Present ]
+Immediately sets every student to Present.
+
+Mark All Absent
+[ ✕ Mark All Absent ]
+Useful when taking attendance quickly.
+
+# SEARCH STUDENT
+
+🔍 [ Search by name or ID................ ]
+
+Example:
+Search: Rahul
+
+→ Rahul Kumar
+
+This becomes useful when there are 50–100 students.
+
+# LIVE STATISTICS
+
+At the bottom:
+
++----------------+----------------+----------------+
+| Present        | Absent         | Attendance     |
+|      45        |       5        |      90%       |
++----------------+----------------+----------------+
+
+Formula:
+Attendance % = Present ÷ Total Students × 100
+
+# SAVE ATTENDANCE
+
+When the admin clicks:
+[ ✓ Save Attendance ]
+
+Flow:
+Select Course
+      ↓
+Select Date
+      ↓
+Mark Students
+      ↓
+Validate
+      ↓
+Check Existing Record
+      ↓
+Save Attendance
+      ↓
+Success
+
+# DUPLICATE ATTENDANCE PROTECTION
+
+If attendance for that course/date has already been recorded:
++---------------------------------------------+
+|          Attendance Already Exists          |
+|                                             |
+| Attendance for Python on 09/08/2026        |
+| has already been recorded.                 |
+|                                             |
+| [ View Existing ] [ Edit Attendance ]       |
+| [ Cancel ]                                  |
++---------------------------------------------+
+This prevents accidental duplicate records.
+
+# VALIDATION
+
+Before saving:
+
+1. Course must be selected.
+2. Semester must be selected.
+3. Section must be selected.
+4. Date must be valid.
+5. Every student must have a status.
+6. Duplicate attendance should be detected.
+
+# SUCCESS MESSAGE
+
++--------------------------------------+
+|             ✓ Success                |
+|                                      |
+| Attendance saved successfully!       |
+|                                      |
+| Python • Section A                   |
+| Present: 45                          |
+| Absent: 5                            |
+| Attendance: 90%                      |
+|                                      |
+|              [ Done ]                |
++--------------------------------------+
+
+# LOW ATTENDANCE INDICATOR
+
+If a student's overall attendance is low, show a warning:
+
+Rahul Kumar     92% 🟢
+Aman Singh      68% ⚠️
+Riya Sharma     89% 🟢
+
+This can later connect to your AI performance analysis.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Attendance Management
+    │
+    ├── Mark Attendance
+    │
+    ├── View History
+    │
+    ├── Edit Attendance
+    │
+    └── Student Attendance Profile
+
+# RESUME-LEVEL FEATURES ⭐
+
+Don't implement these immediately. Add them after the core version works:
+
+1. Attendance percentage calculation
+2. Low-attendance alerts
+3. Monthly attendance charts
+4. Subject-wise attendance
+5. Attendance history
+6. Export attendance to PDF/Excel
+7. AI-based attendance insights
+8. QR-based attendance as an optional advanced feature

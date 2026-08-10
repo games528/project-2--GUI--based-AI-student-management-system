@@ -1,0 +1,263 @@
+THIS SCREEN HANDLES RETURNING AN ISSUED BOOK AND UPDATING THE LIBRARY INVENTORY.
+
+# PURPOSE
+
+Admin/library staff can:
+
+1. Search active book transactions
+2. Find a borrower
+3. See issued books
+4. Record return
+5. Automatically update available copies
+6. Detect overdue books
+7. Calculate optional fines
+8. Generate return receipt
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Return Book                                                            |
+|                      |                                                                         |
+| 🏠 Dashboard         |  BOOK RETURN                                                            |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  [ 🔍 Search student / book / Issue ID................ ]             |
+| 📚 Courses           |                                                                         |
+| 📅 Attendance        |  Active Borrowing                                                      |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 📖 Library     ←     |  │ Issue ID: LIB-2026-0042                                      │  |
+| 📊 Reports           |  │                                                                 │  |
+| 📈 Analytics         |  │ Student: Rahul Kumar       ID: STU2026001                    │  |
+| 🤖 AI Assistant      |  │ Book: Python Programming     B001                          │  |
+| 🔔 Notifications     |  │ Issue Date: 01/08/2026      Due: 08/08/2026                 │  |
+| ⚙ Settings           |  │                                                                 │  |
+| 👤 Profile           |  │ Return Date: [ 09/08/2026 📅 ]                              │  |
+| 🚪 Logout            |  │                                                                 │  |
+|                      |  │ Status: 🔴 1 Day Overdue                                    │  |
+|                      |  │                                                                 │  |
+|                      |  │ Fine: ₹10  (Optional)                                      │  |
+|                      |  │                                                                 │  |
+|                      |  │ [ Cancel ]                  [ ✓ Return Book ]              │  |
+|                      |  └─────────────────────────────────────────────────────────────────┘  |
++----------------------+-------------------------------------------------------------------------+
+
+# SEARCH
+
+The librarian should be able to search using:
+🔍 Search by:
+
+Student Name
+Student ID
+Book Title
+Book ID
+Issue ID
+
+Example:
+Search: STU2026001
+
+→ Rahul Kumar
+   Python Programming
+   Issue ID: LIB-2026-0042
+
+# ACTIVE BORROWING LIST
+
+If the student has multiple books:
+
+Rahul Kumar — Active Books
+
+┌────────────┬─────────────────────┬────────────┬────────────┐
+│ Issue ID   │ Book                │ Due Date   │ Status     │
+├────────────┼─────────────────────┼────────────┼────────────┤
+│ LIB-0042   │ Python Programming  │ 08 Aug     │ 🔴 Overdue │
+│ LIB-0045   │ DBMS Fundamentals   │ 18 Aug     │ 🟢 Active  │
+└────────────┴─────────────────────┴────────────┴────────────┘
+
+Clicking a row selects it for return.
+
+# RETURN DATE
+
+Default to today's date:
+
+Return Date
+[ 09/08/2026 📅 ]
+
+# OVERDUE DETECTION ⭐
+
+The system compares:
+Return Date
+      vs
+Due Date
+
+Example:
+Due Date:     08/08/2026
+Return Date:  09/08/2026
+
+→ 1 day overdue
+
+Display:
+🔴 OVERDUE — 1 DAY
+
+If returned on time:
+🟢 Returned on time
+
+# FINE CALCULATION
+
+Make this optional.
+Example configuration:
+Fine Rate = ₹10/day
+
+Then:
+1 day × ₹10 = ₹10
+
+Display:
+Fine: ₹10
+
+Don't hard-code the fine into the UI. Later, put the rate in Settings.
+
+# RETURN CONFIRMATION
+
+Before actually returning:
+
++----------------------------------------------+
+|             Confirm Book Return              |
+|                                              |
+| Student: Rahul Kumar                         |
+| Book: Python Programming                     |
+|                                              |
+| Issue Date: 01/08/2026                       |
+| Due Date:   08/08/2026                       |
+| Return Date:09/08/2026                       |
+|                                              |
+| Status: 🔴 1 Day Overdue                     |
+| Fine: ₹10                                    |
+|                                              |
+| [ Cancel ]             [ Confirm Return ]    |
++----------------------------------------------+
+
+# RETURN FLOW
+
+Search Transaction
+       ↓
+Select Book
+       ↓
+Load Borrowing Details
+       ↓
+Calculate Overdue
+       ↓
+Calculate Fine (Optional)
+       ↓
+Confirm Return
+       ↓
+Update Transaction
+       ↓
+Increase Available Copies
+       ↓
+Success
+
+# DATABASE CHANGES
+
+Suppose before return:
+Total Copies     = 10
+Available Copies = 6
+Issued Copies    = 4
+
+After returning one book:
+Total Copies     = 10
+Available Copies = 7
+Issued Copies    = 3
+
+The transaction itself changes from:
+Status = Issued
+
+to:
+Status = Returned
+Return Date = 09/08/2026
+
+# SUCCESS DIALOG
+
++---------------------------------------------+
+|             ✓ Book Returned                |
+|                                             |
+| Python Programming                          |
+| Returned by: Rahul Kumar                   |
+|                                             |
+| Return Date: 09/08/2026                    |
+| Fine: ₹10                                   |
+|                                             |
+| [ View Receipt ]       [ Done ]             |
++---------------------------------------------+
+
+# RECEIPT
+
+Later you can generate:
+
+========================================
+           LIBRARY RETURN RECEIPT
+========================================
+
+Issue ID: LIB-2026-0042
+
+Student: Rahul Kumar
+Student ID: STU2026001
+
+Book: Python Programming
+Book ID: B001
+
+Issued: 01/08/2026
+Due:    08/08/2026
+Returned: 09/08/2026
+
+Status: OVERDUE
+Fine: ₹10
+
+========================================
+
+This can eventually become a PDF.
+
+# VALIDATION
+
+Check:
+
+1. Transaction exists
+2. Book is currently issued
+3. Return date isn't before issue date
+4. Book isn't already returned
+5. Fine calculation is correct
+6. Inventory count doesn't exceed total copies
+
+# NAVIGATION
+
+Library Dashboard
+       │
+       ▼
+   Return Book
+       │
+       ├── Search Transaction
+       │
+       ├── Select Book
+       │
+       ├── Calculate Overdue
+       │
+       └── Confirm Return
+                │
+                ▼
+             Success
+                │
+                ▼
+        Library Dashboard
+
+# RESUME-LEVEL FEATURES ⭐
+
+Later add:
+
+1. Automatic overdue detection
+2. Configurable fine rules
+3. Return receipts
+4. Borrowing history
+5. Barcode scanning
+6. Automatic inventory update
+7. Overdue notifications
+8. Student-wise borrowing statistics

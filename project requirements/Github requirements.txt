@@ -1,0 +1,6 @@
+clean commit history
+meaningful commit messages
+.gitignore
+license
+README.md
+release tags

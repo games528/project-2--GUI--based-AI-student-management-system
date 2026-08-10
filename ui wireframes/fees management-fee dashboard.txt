@@ -1,0 +1,236 @@
+THIS IS THE MAIN SCREEN FOR TRACKING STUDENT FEES, PAYMENTS, PENDING AMOUNTS, AND PAYMENT HISTORY.
+
+# PURPOSE
+
+Admin can:
+
+1. View total fees
+2. Track paid/pending fees
+3. Search students
+4. Filter fee records
+5. Record payments
+6. View payment history
+7. Generate receipts
+8. See overdue fees
+9. Export fee reports
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Fees Management                                                        |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Fee Overview                                                          |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 📚 Courses           |  │ Total Fees │ │ Paid       │ │ Pending    │ │ Overdue    │       |
+| 📅 Attendance        |  │ ₹25,00,000 │ │ ₹20,00,000 │ │ ₹5,00,000  │ │ ₹1,20,000  │       |
+| 📝 Marks             |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| 💰 Fees        ←     |                                                                         |
+| 📖 Library           |  [ 🔍 Search student / ID................ ]                     |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  Status [▼]  Semester [▼]  Course [▼]  [Apply Filters]            |
+| 🤖 AI Assistant      |                                                                         |
+| 🔔 Notifications     |  [+ Record Payment]     [Export ▼]                                  |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  -----------------------------------------------------------------------|
+| 🚪 Logout            |  | ID | Student | Total | Paid | Pending | Due Date | Status | Action |
+|                      |  -----------------------------------------------------------------------|
+|                      |  |101 | Rahul | ₹50k | ₹40k | ₹10k | 30 Aug | 🟡 Due | 👁 ⋮ |
+|                      |  |102 | Aman  | ₹50k | ₹50k | ₹0    | --     | 🟢 Paid| 👁 ⋮ |
+|                      |  |103 | Riya  | ₹50k | ₹30k | ₹20k | 15 Aug | 🔴 Overdue| 👁 ⋮ |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |              [ < ] 1 2 3 4 [ > ]                                  |
++----------------------+-------------------------------------------------------------------------+
+
+# OVERVIEW CARDS
+
+Total Fees
+Total fees expected from all students.
+₹25,00,000
+Total Fees
+
+Paid
+₹20,00,000
+Paid
+
+Pending
+₹5,00,000
+Pending
+
+Overdue
+₹1,20,000
+Overdue
+
+These values should be calculated from your database rather than manually entered.
+
+# SEARCH
+
+🔍 [ Search student name / ID / receipt number... ]
+Search examples:
+Rahul
+STU2026001
+REC-2026-001
+
+# FILTERS
+
+Status      [▼ All]
+
+Semester    [▼ All]
+
+Course      [▼ All]
+
+Due Date    [▼ All]
+
+[ Apply Filters ]    [ Clear ]
+
+Possible statuses:
+🟢 Paid
+🟡 Due
+🔴 Overdue
+
+# FEE TABLE
+
+ID     |     Student   |     Total    |      Paid     |      Pending    |    Due Date     |      Status    |     Action
+101    |     Rahul     |     ₹50k     |      ₹40k     |       ₹10k      |    30 Aug       |      🟡 Due    |    👁 ⋮
+102    |     Aman      |     ₹50k     |      ₹50k     |       ₹0        |        —        |      🟢 Paid   |     👁 ⋮
+103    |     Riya      |     ₹50k     |      ₹30k     |       ₹20k      |    15 Aug       |      🔴 Overdue |     👁 ⋮
+
+# RECORD PAYMENT
+
+Button:
+[ + Record Payment ]
+Opens the payment form.
+
+Example:
++---------------------------------------------+
+|             Record Payment                  |
+|                                             |
+| Student      [▼ Rahul Kumar]               |
+| Student ID   STU2026001                    |
+|                                             |
+| Amount       [ ₹10,000 ]                   |
+| Payment Date [ 09/08/2026 📅 ]             |
+|                                             |
+| Payment Mode [▼ UPI]                       |
+|                                             |
+| Transaction ID                              |
+| [ UPI123456789................ ]            |
+|                                             |
+| Notes                                        |
+| [____________________________________]     |
+|                                             |
+| [ Cancel ]          [ ✓ Record Payment ]   |
++---------------------------------------------+
+
+For your project, you can initially record payment information rather than processing real money.
+
+# PAYMENT MODES
+
+Dropdown:
+
+[▼ Payment Mode]
+
+Cash
+UPI
+Bank Transfer
+Card
+Other
+
+# AUTOMATIC CALCULATION
+
+Suppose:
+Total Fee = ₹50,000
+Previously Paid = ₹30,000
+New Payment = ₹10,000
+
+System calculates:
+New Paid = ₹40,000
+Remaining = ₹10,000
+
+No manual calculation should be required.
+
+# PAYMENT RECEIPT
+
+After recording:
++---------------------------------------------+
+|             ✓ Payment Recorded             |
+|                                             |
+| Student: Rahul Kumar                       |
+| Amount: ₹10,000                             |
+| Receipt: REC-2026-001                      |
+|                                             |
+| [ View Receipt ]  [ Print ]  [ Done ]       |
++---------------------------------------------+
+
+# FEE DETAILS
+
+Clicking 👁 should open:
+Student: Rahul Kumar
+Student ID: STU2026001
+
+Total Fee       ₹50,000
+Paid            ₹40,000
+Pending         ₹10,000
+
+Payment History
+------------------------------------
+Date       Amount       Mode
+05 Aug     ₹20,000      UPI
+09 Aug     ₹20,000      Bank Transfer
+
+# OVERDUE WARNING
+
+If the due date has passed:
+🔴 OVERDUE
+
+Rahul Kumar
+Pending: ₹10,000
+Due date: 30/07/2026
+
+Later you can connect this to your notification system.
+
+# EXPORT
+
+[ Export ▼ ]
+
+├── Excel
+├── CSV
+└── PDF
+
+Export should respect the currently selected filters.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Fees Management
+    │
+    ├── Fee Overview
+    │
+    ├── Record Payment
+    │
+    ├── Payment History
+    │
+    ├── Fee Details
+    │
+    └── Generate Receipt
+
+# RESUME-LEVEL FEATURES ⭐
+
+After the basic fee system works:
+
+1. Automatic pending calculation
+2. Due-date tracking
+3. Overdue detection
+4. Payment history
+5. PDF receipts
+6. Fee analytics
+7. Monthly collection graph
+8. Semester-wise collection
+9. Automated fee reminders
+10. AI-based fee prediction/insights

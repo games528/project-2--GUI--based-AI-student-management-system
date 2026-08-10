@@ -1,0 +1,79 @@
+# PURPOSE
+
+display application branding while the app loads.
+initialize the database,theme and assets.
+
+# WIREFRAME 
+
++------------------------------------------------------------------+
+|                                                                  |
+|                                                                  |
+|                     🎓 AI STUDENT MANAGEMENT                      |
+|                                                                  |
+|                   [ College / App Logo Here ]                    |
+|                                                                  |
+|               "Smart. Secure. Intelligent."                      |
+|                                                                  |
+|                   Loading... ████████░░ 80%                       |
+|                                                                  |
+|                                                                  |
+|                     Version 1.0.0                                |
+|                                                                  |
++------------------------------------------------------------------+
+
+# UI components
+
+1. app logo 
+2. application title
+3. tagline
+4. progress bar
+5. loading percentages
+6. version number
+
+#  LAYOUT
+
+1. logo centered
+2. title below the logo
+3. tagline below the title
+4. progress bar centered near the bottom
+5. version number in the bottom right corner
+
+# COLORS 
+
+1. background: white or dark blue
+2. primary: blue
+3. accent: green
+4. text: black or white
+
+#  FONTS
+
+1. title: 28-32 px,bold
+2. tagline: 14-16 px
+3. version: 10-12 px
+
+# ACTIONS
+
+1. show logo
+2. animate the progress bar
+3. load database
+4. load settings
+5. check user session
+6. automatically navigate to the login screen when loading completes
+
+# VALIDATION
+
+1. if the database fails to load, show an error dialog 
+2. if assets are missing, display a fallback logo or message
+
+# NAVIGATION FLOW
+
+Start App
+    ↓
+Splash Screen
+    ↓
+Login Screen
+
+# estimated build time
+
+1. UI: 20-30 minutes
+2. Logic: 20-30 minutes

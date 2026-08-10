@@ -1,0 +1,6 @@
+student list
+attendance report
+marks report
+top performers
+weak students
+department wise statistics

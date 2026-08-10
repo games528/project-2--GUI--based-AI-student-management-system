@@ -1,0 +1,10 @@
+modern dashboard
+sidebar navigation
+icons
+dark mode
+light mode
+responsive layout
+progress bars
+status indicators
+splash screen 
+loading animation

@@ -1,0 +1,225 @@
+THIS SCREEN GIVES THE ADMIN A COMPLETE OVERVIEW OF ONE TEACHER.
+
+# PURPOSE
+
+Admin can view:
+
+1. Personal information
+2. Contact details
+3. Professional details
+4. Assigned subjects
+5. Assigned courses
+6. Class schedule
+7. Student count
+8. Attendance/teaching statistics
+9. Recent activity
+10. Edit teacher
+11. Generate teacher report
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  ← Back to Teachers                    Teacher Profile                 |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │ [PHOTO]   Amit Kumar                         🟢 Active          │  |
+| 👨‍🏫 Teachers   ←     |  │           Teacher ID: TCH2026001                                │  |
+| 📚 Courses           |  │           Computer Science                                     │  |
+| 📅 Attendance        |  │                                                                 │  |
+| 📝 Marks             |  │           [ ✏ Edit ] [ 📄 Generate Report ] [ ⋮ More ]       │  |
+| 💰 Fees              |  └─────────────────────────────────────────────────────────────────┘  |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 📈 Analytics         |  │ Subjects   │ │  Students  │ │  Courses   │ │ Experience│       |
+| 🤖 AI Assistant      |  │     3      │ │    120     │ │     4      │ │   6 yrs   │       |
+| 🔔 Notifications     |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  PERSONAL INFORMATION                                                   |
+| 🚪 Logout            |                                                                         |
+|                      |  Name: Amit Kumar          DOB: 15/08/1985                           |
+|                      |  Gender: Male                Phone: 9876543210                       |
+|                      |  Email: amit@email.com      Joining: 15/07/2020                      |
+|                      |                                                                         |
+|                      |  PROFESSIONAL INFORMATION                                               |
+|                      |                                                                         |
+|                      |  Department: Computer Science                                          |
+|                      |  Qualification: M.Tech                                                  |
+|                      |  Specialization: Artificial Intelligence                               |
+|                      |                                                                         |
+|                      |  ASSIGNED SUBJECTS                                                      |
+|                      |  [ Python ]  [ Artificial Intelligence ]  [ DBMS ]                    |
+|                      |                                                                         |
+|                      |  ASSIGNED COURSES                                                       |
+|                      |  BSc AI & DS    •    BCA    •    Semester 1                            |
+|                      |                                                                         |
+|                      |  RECENT ACTIVITY                                                        |
+|                      |  • Marks updated                                                       |
+|                      |  • Attendance submitted                                                |
+|                      |  • Course assigned                                                     |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# PROFILE HEADER
+
+        [ PHOTO ]
+
+        Amit Kumar
+        TCH2026001
+        Computer Science
+
+        🟢 Active
+
+Buttons:
+
+[ ✏ Edit ]
+[ 📄 Generate Report ]
+[ ⋮ More ]
+
+# STATISTICS CARDS
+
+Subjects
+3
+Assigned Subjects
+
+Students
+120
+Students
+
+Courses
+4
+Courses
+
+Experience
+6 Years
+Experience
+
+# PERSONAL INFORMATION
+
+PERSONAL INFORMATION
+
+Full Name       Amit Kumar
+Teacher ID      TCH2026001
+Date of Birth   15/08/1985
+Gender          Male
+Email           amit@email.com
+Phone           9876543210
+Joining Date    15/07/2020
+
+Keep this read-only on the profile screen.
+Use Edit to change it.
+
+# PROFESSIONAL INFORMATION
+
+PROFESSIONAL INFORMATION
+
+Department       Computer Science
+Qualification    M.Tech
+Specialization   Artificial Intelligence
+Experience       6 Years
+
+# ASSIGNED SUBJECTS
+
+Use small cards/tags:
+
+ASSIGNED SUBJECTS
+
+┌─────────────┐ ┌──────────────────────┐ ┌─────────────┐
+│   Python    │ │ Artificial           │ │    DBMS     │
+│             │ │ Intelligence         │ │             │
+└─────────────┘ └──────────────────────┘ └─────────────┘
+
+# ASSIGNED COURSES
+
+ASSIGNED COURSES
+
+Course              Semester       Students
+------------------------------------------------
+BSc AI & DS         1              45
+BCA                 2              38
+BSc AI & DS         2              37
+
+Clicking a course can open its course details.
+
+# TEACHING STATISTICS
+
+Add a small analytics section:
+
+TEACHING STATISTICS
+
+Classes This Month       42
+Students Taught         120
+Assignments             18
+Average Class Attendance 91%
+This makes the profile more useful than a simple information page.
+
+# RECENT ACTIVITY
+
+RECENT ACTIVITY
+
+📝 Marks updated
+   Python — Semester 2
+
+📅 Attendance submitted
+   BSc AI & DS — Section A
+
+📚 Course assigned
+   BCA — Semester 2
+
+🕒 Profile updated
+   07 Aug 2026
+
+# MORE MENU
+
+[ ⋮ More ]
+
+├── Assign Subject
+├── Assign Course
+├── Generate Report
+├── Print Profile
+├── View Activity
+└── Deactivate Teacher
+
+# GENERATE REPORT
+
++---------------------------------------------+
+|         Generate Teacher Report             |
+|                                             |
+| ☑ Personal Information                      |
+| ☑ Professional Information                  |
+| ☑ Assigned Subjects                         |
+| ☑ Assigned Courses                          |
+| ☑ Teaching Statistics                       |
+|                                             |
+| Format: [ PDF ▼ ]                           |
+|                                             |
+|          [ Generate Report ]                |
++---------------------------------------------+
+
+# NAVIGATION
+
+Teacher List
+     │
+     ▼
+Teacher Profile
+     │
+ ┌───┼─────────────┬─────────────┐
+ ▼   ▼             ▼             ▼
+Edit Subjects     Courses       Report
+ │
+ ▼
+Edit Teacher
+
+# RESUME-LEVEL UX
+
+Later add:
+
+1. Teacher workload visualization
+2. Course timetable
+3. Student performance under that teacher
+4. Activity history
+5. Last login
+6. Teacher performance analytics
+7. Exportable teacher profile

@@ -1,0 +1,9 @@
+add marks
+edit marks
+delete marks
+subject wise marks
+semester marks
+GPA calculation
+percentage calculation
+grade calculation
+rank generation

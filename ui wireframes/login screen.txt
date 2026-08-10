@@ -1,0 +1,117 @@
+# PURPOSE
+
+1. allows users to securely log in 
+2. redirect users to the correct dashboard based on their role(admin,teacher or student)
+
+# WIREFRAME 
+
++--------------------------------------------------------------------------------+
+| AI STUDENT MANAGEMENT SYSTEM                                 🌙 Dark Mode      |
++--------------------------------------------------------------------------------+
+
+                           Welcome Back!
+
+                      Please sign in to continue
+
+        Username / Email
+        +----------------------------------------------+
+        |                                              |
+        +----------------------------------------------+
+
+        Password
+        +----------------------------------------------+
+        | *************                                |
+        +----------------------------------------------+
+
+        Role
+        (●) Admin     ( ) Teacher     ( ) Student
+
+        ☑ Remember Me                  Forgot Password?
+
+                  +---------------------------+
+                  |         LOGIN             |
+                  +---------------------------+
+
+                  Don't have an account?
+                       [ Register ]
+
+---------------------------------------------------------------------------------
+ Version 1.0                                        © 2026 AI SMS
+
+
+# UI components
+
+1. app logo 
+2. app title
+3. welcome message 
+4. username/email textbox
+5. password textbox
+6. show/hide password
+7. role selection(admin/teacher/student)
+8. remember me checkbox
+9. forgot password link 
+10. login button 
+11. register button 
+12. dark mode toggle
+13. footer with version
+
+# LAYOUT
+
+1. header: app name and theme toggle
+2. center: login form
+3. button: version and copyright
+
+# BUTTONS 
+
+1. login ---> validate credentials and open the correct dashboard
+2. register ---> open register screen 
+3. forgot password ---> open forgot password screen
+4. dark mode ---> switch between light and dark themes
+5. show password ---> toggle password visibilityz
+
+# VALIDATION
+
+1. username cannot be empty
+2. password cannot be empty
+3. email format must be valid 
+4. password must be correct 
+5. selected role must match the account
+6. display an error for invalid login
+
+# SUCCESS MESSAGE 
+
+Login successful.
+Welcome, Samridh!
+
+# ERROR MESSAGES 
+
+1. username is required
+2. password is requred 
+3. invalid username or password
+4. please select a role
+
+# NAVIGATION FLOW
+
+Splash Screen
+       │
+       ▼
+Login
+ ├── Register
+ ├── Forgot Password
+ └── Dashboard (after successful login)
+
+
+# UX IMPROVEMENTS
+
+1. press enter to log in
+2. auto focus on the username field
+3. show a loading spinner while verifying credentials
+4. disable the login button during verification
+5. display friendly, clear error messages
+6. remember the last selected role if "Remember Me" is checked
+
+# ESTIMATED BUILD TIME
+
+1. UI design: 45-60 minutes
+2. Backend logic: 1-2 hours
+3. database integration: 1 hour 

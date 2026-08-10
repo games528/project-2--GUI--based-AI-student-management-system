@@ -1,0 +1,223 @@
+deadline = 31/08/2026
+
+1. PLANNING 5 left
+
+1. define project requirements done 
+2. list all features done
+4. design ui wireframes 
+5. create folder structure
+6. initialize GIT repository
+7. create GITHUB repository
+
+2. PROFESSIONAL FOLDER STRUCTURE 18 left 
+
+1. main.py
+2. gui/
+3. models/
+4. database/
+5. services/
+6. utils/
+7. assets/
+8. icons/
+9. images/
+10. exports/ 
+11. backups/
+12. logs/
+13. tests/
+14. README.md 
+15. .gitignore
+16. requirements.txt
+17. license
+18. config.py
+
+3. AUTHENTICATION 5 left
+
+1. login page
+2. logout
+3. change password
+4. password hashing
+5. remember login
+
+4. DATABASE 6 left
+
+1. SQLite
+2. CRUD operations
+3. Foreign keys
+4. constraints
+5. backup 
+6. restore
+
+5. DASHBOARD 8 left
+
+1. total students
+2. boys/girls count
+3. average attendance
+4. average percentage
+5. top performer
+6. students needing attention
+7. recent activities
+8. quick action buttons
+
+6. STUDENT MANAGEMENT 9 left
+
+1. add students
+2. edit student
+3. delete student 
+4. view student profile
+5. search student
+6. filter student
+7. sort student
+8. auto-generated student ID
+9. duplicate checking
+
+7. STUDENT PROFILE 13 left
+
+1. photo upload
+2. full name
+3. roll number
+4. email
+5. phone
+6. address 
+7. gender
+8. date of birth
+9. course
+10. semester
+11. section
+12. admission year
+13. guardian details
+
+8. ACADEMIC RECORDS 10 left
+
+1. subject MANAGEMENT
+2. add marks
+3. edit marks
+4. delete marks
+5. total marks
+6. percentage
+7. grade 
+8. pass/fail
+9. GPA
+10. rank calculation
+
+9. ATTENDANCE 5 left
+
+1. mark attendance
+2. edit attendance
+3. attendance percentage
+4. low attendance alerts
+5. monthly report 
+
+10. SEARCH AND FILTER 7 left 
+
+1. by name 
+2. by ID
+3. by course
+4. by semester
+5. by grade
+6. by attendance
+7. by percentage
+
+11. ANALYTICS 6 left
+
+1. grade distribution
+2. attendance trends
+3. subject averages
+4. top performers
+5. students at risk
+6. performance comparison
+
+12. CHARTS 5 left
+
+1. attendance chart 
+2. grade chart 
+3. subject chart 
+4. monthly performance graph
+5. dashboard summary graphs
+
+13. AI FEATURES 9 left
+
+1. AI performance summary
+2. weak subject analysis
+3. strong subject analysis
+4. personalized study plan 
+5. attendance advice
+6. AI report card comments
+7. career suggestions
+8. learning recommendations
+9. natural-language search
+
+14. REPORTS AND EXPORT 5 left 
+
+1. PDF report cards
+2. CSV export 
+3. excel export
+4. print preview
+5. class REPORTS
+
+15. USER EXPERIENCE 7 left
+
+1. attractive GUI 
+2. icons
+3. tooltips
+4. progress indicators
+5. confirmation dialogs
+6. status bar
+7. keyboard shortcuts
+
+16. VALIDATION 5 left
+
+1. email validation 
+2. phone validation 
+3. marks validation
+4. empty field validation
+5. duplicate detection
+
+17. ERROR HANDLING 4 left
+
+1. database errors
+2. missing files
+3. invalid data 
+4. friendly error messages
+
+18. LOGGING 5 left
+
+1. login log 
+2. student updates
+3. deleted records 
+4. export history
+5. error log 
+
+19. TESTING 5 left
+
+1. CRUD tests
+2. database tests
+3. validation tests
+4. export tests
+5. AI feature tests
+
+20. DOCUMENTATION 6 left
+
+1. professional README
+2. installation guide
+3. feature list
+4. architecture overview
+5. screenshots
+6. future improvements
+
+21. GITHUB  5 left
+
+1. 50 + meaningful commits
+2. clear commit messages
+3. issues
+4. version releases
+5. repository description
+
+22. RESUME READY 7 left
+
+1. runs without errors
+2. easy setup using requirements.txt
+3. clean code structure 
+4. consistent coding style
+5. well commented where needed
+6. professional screenshots
+7. short demo video (2-3 minutes)

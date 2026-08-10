@@ -1,0 +1,12 @@
+add student
+update student
+delete student
+view student
+search student
+filter students
+sort students
+student profile
+student photo
+student ID generation
+bulk student import 
+export student list

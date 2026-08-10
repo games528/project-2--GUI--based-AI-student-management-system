@@ -1,0 +1,10 @@
+face recognition attendance
+QR code attendance
+email notifications
+SMS notifications
+cloud database
+multi user support
+web version
+mobile app
+machine learning prediction
+AI chatbot assistant

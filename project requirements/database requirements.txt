@@ -1,0 +1,16 @@
+student ID
+name
+roll number
+age 
+gender
+email
+phone
+address
+department
+semester
+attendance
+marks
+GPA
+remarks
+created date
+updated date

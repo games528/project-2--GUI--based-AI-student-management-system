@@ -1,0 +1,184 @@
+THIS SCREEN IS ALMOST IDENTICAL TO ADD STUDENT, BUT INSTEAD OF CREATING A NEW RECORD, IT LOADS AN EXISTING STUDENT'S INFORMATION AND ALLOWS THE ADMIN TO MODIFY IT.
+
+# PURPOSE
+
+Admin can:
+
+1. Update student information
+2. Change course/semester
+3. Update contact details
+4. Update guardian information
+5. Change profile photo
+6. Save changes
+7. Reset changes
+8. Cancel editing
+
+# WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Edit Student                                                          |
+|                      |  Student ID: STU2026001                                                 |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌─────────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │                      PROFILE PHOTO                                │  |
+| 👨‍🏫 Teachers         |  │                    [ Student Photo ]                              │  |
+| 📚 Courses           |  │                  [ Change Photo ]                                 │  |
+| 📅 Attendance        |  └─────────────────────────────────────────────────────────────────┘  |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  PERSONAL INFORMATION                                                   |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  Full Name        [ Rahul Kumar____________ ]                         |
+| 📈 Analytics         |  Date of Birth    [ 12/05/2007 ]                                    |
+| 🤖 AI Assistant      |  Gender           [ Male ▼ ]                                         |
+| 🔔 Notifications     |  Student ID       [ STU2026001 ] 🔒                                  |
+| ⚙ Settings           |                                                                         |
+| 👤 Profile           |  CONTACT INFORMATION                                                    |
+| 🚪 Logout            |                                                                         |
+|                      |  Email            [ rahul@email.com________ ]                         |
+|                      |  Phone            [ 9876543210____________ ]                          |
+|                      |                                                                         |
+|                      |  ACADEMIC INFORMATION                                                   |
+|                      |                                                                         |
+|                      |  Course           [ BSc AI & DS ▼ ]                                  |
+|                      |  Semester         [ 2 ▼ ]                                            |
+|                      |  Section          [ A ▼ ]                                             |
+|                      |                                                                         |
+|                      |  GUARDIAN INFORMATION                                                   |
+|                      |                                                                         |
+|                      |  Guardian Name    [ Raj Kumar____________ ]                           |
+|                      |  Guardian Phone   [ 98765XXXXX____________ ]                         |
+|                      |                                                                         |
+|                      |  ADDRESS                                                                 |
+|                      |  Address          [___________________________________________]         |
+|                      |                                                                         |
+|                      |  [ Cancel ]        [ Reset Changes ]        [ ✓ Save Changes ]         |
+|                      |                                                                         |
++----------------------+-------------------------------------------------------------------------+
+
+# IMPORTANT DIFFERENCE FROM ADD STUDENT
+
+The Student ID should be locked.
+Student ID: STU2026001 🔒
+The admin shouldn't accidentally change the unique identifier.
+
+# EDITABLE FIELDS 
+
+Personal:
+
+1. Name
+2. Date of birth
+3. Gender
+4. Photo
+
+Contact:
+
+1. Email
+2. Phone
+
+Academic:
+
+1. Course
+2. Department
+3. Semester
+4. Section
+
+Guardian:
+
+1. Guardian name
+2. Relationship
+3. Guardian phone
+4. Guardian email
+
+Address:
+
+1. Full address
+
+# SAVE CHANGES FLOW
+
+Edit Student
+     ↓
+Modify Information
+     ↓
+Click "Save Changes"
+     ↓
+Validate Data
+     ↓
+Update Database
+     ↓
+Success Message
+     ↓
+Student Profile / Student List
+
+# UNSAVED CHANGES PROTECTION
+
+If the admin tries to leave after making changes:
++---------------------------------------------+
+|          Unsaved Changes                    |
+|                                             |
+| You have unsaved changes.                   |
+| Do you want to leave without saving?        |
+|                                             |
+| [ Stay ]   [ Save Changes ]   [ Leave ]     |
++---------------------------------------------+
+This is a good professional UX feature.
+
+# VALIDATION
+
+Check:
+1. Required fields aren't empty.
+2. Email is valid.
+3. Phone number is valid.
+4. Course exists.
+5. Semester is valid.
+6. No invalid characters in appropriate fields.
+7. Student ID remains unchanged.
+
+# SUCCESS DIALOG
+
++--------------------------------------+
+|             ✓ Success                |
+|                                      |
+| Student information updated!         |
+|                                      |
+|          [ View Profile ]             |
+|          [ Done ]                     |
++--------------------------------------+
+
+# RESET CHANGES
+Don't immediately clear everything.
+Instead, restore the original database values:
+
+Are you sure you want to discard
+your changes?
+
+[ Cancel ]        [ Discard Changes ]
+
+# NAVIGATION
+
+Student List
+     │
+     ├── ✏ Edit
+     │
+     ▼
+Edit Student
+     │
+     ├── Save Changes ──► Student Profile
+     │
+     ├── Reset ─────────► Original Data
+     │
+     └── Cancel ────────► Student List
+
+ RESUME-LEVEL UX FEATURES
+
+Add these later:
+
+1. Last Updated: 07 Aug 2026, 17:05
+2. Updated By: Admin
+3. Change tracking/activity log
+4. Profile image preview
+5. Real-time validation
+6. Auto-save draft
+7. Keyboard navigation

@@ -1,0 +1,6 @@
+create timetable
+edit timetable
+daily schedule
+weekly schedule
+teacher timetable
+student timetable

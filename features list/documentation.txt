@@ -1,0 +1,9 @@
+README
+installation guide
+user manual 
+screenshots
+project architecture diagram
+database scheme
+requirements file
+license
+changelog

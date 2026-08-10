@@ -1,0 +1,204 @@
+THIS IS THE MAIN SCREEN FOR MANAGING ALL COURSES/SUBJECTS IN YOUR SYSTEM.
+
+# PURPOSE
+
+Admin can:
+
+1. View all courses
+2. Search courses
+3. Filter by department/semester
+4. Add a course
+5. Edit a course
+6. View course details
+7. Assign teachers
+8. See enrolled students
+9. Activate/deactivate courses
+10. Export course data
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Course Management                                                      |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Courses (18)                                                          |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  [ 🔍 Search course name / code................ ] [Search]          |
+| 📚 Courses     ←     |                                                                         |
+| 📅 Attendance        |  Department [▼]   Semester [▼]   Status [▼]   [Apply Filters]      |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  [+ Add Course]    [Import]    [Export ▼]                         |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  -----------------------------------------------------------------------|
+| 📈 Analytics         |  | Code | Course Name | Dept | Sem | Credits | Students | Status | Action |
+| 🤖 AI Assistant      |  -----------------------------------------------------------------------|
+| 🔔 Notifications     |  | C101 | Python       | CS   | 1   | 4       | 52       | Active | 👁 ✏ ⋮ |
+| ⚙ Settings           |  | C102 | AI           | AI   | 2   | 4       | 45       | Active | 👁 ✏ ⋮ |
+| 👤 Profile           |  | C103 | DBMS         | CS   | 2   | 3       | 38       | Active | 👁 ✏ ⋮ |
+| 🚪 Logout            |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |              [ < ]  1  2  3  4  [ > ]                            |
++----------------------+-------------------------------------------------------------------------+
+
+# SEARCH
+
+Search by:
+
+1. Course name
+2. Course code
+3. Teacher
+4. Department
+🔍 [ Search courses................................ ]
+
+# FILTERS
+
+Department    [▼ All Departments]
+
+Semester      [▼ All Semesters]
+
+Credits       [▼ All]
+
+Status        [▼ Active / Inactive]
+
+[ Apply Filters ]    [ Clear ]
+
+# COURSE TABLE
+
+Field                     |      Purpose
+Course Code               |      Unique course identifier
+Course Name               |      Course/subject name
+Department                |      Department
+Semester                  |      Semester
+Credits                   |      Course credits
+Students                  |      Enrolled students
+Status                    |      Active/Inactive
+Actions                   |      View/Edit/More
+
+Example:
+C101 | Python | CS | 1 | 4 | 52 | 🟢 Active | 👁 ✏ ⋮
+
+# ACTION MENU
+
+Click ⋮:
++----------------------------+
+| 👁 View Course             |
+| ✏ Edit Course             |
+| 👨‍🏫 Assign Teacher         |
+| 👨‍🎓 View Students          |
+| 📊 View Performance        |
+| 📄 Generate Report         |
+| 🔴 Deactivate              |
++----------------------------+
+
+# ADD COURSE
+
+[ + Add Course ]
+This will open the Add Course screen.
+
+The form should eventually contain:
+
+1. Course code
+2. Course name
+3. Department
+4. Semester
+5. Credits
+6. Description
+7. Assigned teacher
+8. Maximum students
+9. Status
+
+# COURSE STATUS
+
+Use visual status badges:
+🟢 Active
+🟠 Draft
+🔴 Inactive
+Avoid relying on color alone—include the text as well.
+
+# EMPTY STATE
+
+If there are no courses:
+
++--------------------------------------------------+
+
+                     📚
+
+                No Courses Found
+
+          Add your first course to
+          start managing academics.
+
+                  [ + Add Course ]
+
++--------------------------------------------------+
+
+# DELETE/DEACTIVATE CONFIRMATION
+
+Prefer Deactivate rather than permanent deletion because marks and attendance may already be connected to the course.
++----------------------------------------------+
+|          Deactivate Course?                  |
+|                                              |
+| Python (C101) will be marked inactive.       |
+| Existing records will be preserved.          |
+|                                              |
+| [ Cancel ]             [ Deactivate ]        |
++----------------------------------------------+
+
+# IMPORT / EXPORT
+
+Import
+[ Import ▼ ]
+
+├── CSV
+└── Excel
+
+Export
+[ Export ▼ ]
+
+├── CSV
+├── Excel
+└── PDF
+
+# SUCCESS MESSAGES
+
+✅ Course added successfully.
+
+✅ Course information updated.
+
+✅ Course deactivated successfully.
+
+# NAVIGATION
+
+Dashboard
+    │
+    ▼
+Course Management
+    │
+    ├── Add Course ────────► Add Course
+    │
+    ├── 👁 View ───────────► Course Details
+    │
+    ├── ✏ Edit ────────────► Edit Course
+    │
+    ├── Assign Teacher ────► Teacher Assignment
+    │
+    ├── View Students ─────► Student List
+    │
+    └── Performance ───────► Course Analytics
+
+# RESUME-LEVEL UX
+
+Later add:
+
+1. Course capacity indicator
+2. Teacher assignment
+3. Student enrollment count
+4. Course performance graph
+5. Average attendance
+6. Average marks
+7. Course-wise AI insights
+8. Import preview before database insertion
+9. Pagination
+10. Sortable columns

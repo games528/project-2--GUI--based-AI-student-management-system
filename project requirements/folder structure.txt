@@ -1,0 +1,16 @@
+AI student MANAGEMENT system
+
+assets
+database
+models
+services
+ui
+utils
+reports 
+tests
+exports
+backups
+main.py
+requirements.txt
+README.md
+.gitignore

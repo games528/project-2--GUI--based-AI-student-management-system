@@ -1,0 +1,24 @@
+the application should allow users to:
+
+1. add student records
+2. view all students
+3. search students
+4. update student details
+5. delete student records
+6. display student profiles
+7. store attendance
+8. store marks
+9. calculate grades
+10. calculate GPA/percentage
+11. filter students by class, grade or section
+12. sort student records
+13. import data from CSV
+14. export data to CSV/PDF
+15. dashboard with statistics
+16. login system (admin)
+17. user authentication 
+18. AI study recommendations
+19. AI performance analysis
+20. notifications/reminders
+21. backup and restore data
+22. print reports 

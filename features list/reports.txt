@@ -1,0 +1,7 @@
+student report card
+attendance report
+fee report
+teacher report
+course report
+PDF report generation
+Excel export
