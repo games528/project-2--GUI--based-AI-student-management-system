@@ -1,0 +1,264 @@
+THIS SCREEN GIVES USERS A PLACE TO UNDERSTAND THE SYSTEM, FIND ANSWERS, REPORT PROBLEMS, AND CONTACT THE ADMINISTRATOR.
+
+SINCE THIS IS YOUR AI STUDENT MANAGEMENT SYSTEM, WE CAN ALSO CONNECT THE HELP CENTER WITH YOUR AI ASSISTANT.
+
+# PURPOSE
+
+Users can:
+
+1. Search FAQs
+2. Read help articles
+3. Report technical problems
+4. Submit support requests
+5. Check ticket status
+6. Contact administrator
+7. Ask AI for help
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Help & Support                                                        |
+|                      |                                                                         |
+| 🏠 Dashboard         |  How can we help you?                                                 |
+| 👥 Users             |                                                                         |
+| 👨‍🎓 Students         |  ┌───────────────────────────────────────────────────────────────┐  |
+| 👨‍🏫 Teachers         |  │ 🔍 Search help articles, FAQs, guides.....................     │  |
+| 📚 Courses           |  └───────────────────────────────────────────────────────────────┘  |
+| 📅 Attendance        |                                                                         |
+| 📝 Marks             |  QUICK HELP                                                            |
+| 💰 Fees              |                                                                         |
+| 📖 Library           |  ┌────────────────┐ ┌────────────────┐ ┌────────────────┐       |
+| 📊 Reports           |  │ 📚 FAQs        │ │ 🐛 Report Bug  │ │ 🎫 My Tickets  │       |
+| 📈 Analytics         |  │ Common answers │ │ Report problem │ │ Track requests │       |
+| 🤖 AI Assistant      |  └────────────────┘ └────────────────┘ └────────────────┘       |
+| 🔔 Notifications     |                                                                         |
+| ⚙ Settings           |  POPULAR TOPICS                                                       |
+| 👤 Profile            |                                                                         |
+| 📋 Audit Logs        |  • How to mark attendance?                                          |
+| 🆘 Help & Support ←  |  • How to issue a library book?                                    |
+| 🚪 Logout            |  • How to generate reports?                                         |
+|                      |  • How to add a student?                                            |
+|                      |  • How does the AI Assistant work?                                  |
+|                      |                                                                         |
+|                      |  🤖 NEED PERSONALIZED HELP?                                          |
+|                      |  Ask the AI Assistant about using the system.                        |
+|                      |                                                                         |
+|                      |                 [ Open AI Assistant ]                                |
++----------------------+-------------------------------------------------------------------------+
+
+# SEARCH HELP
+
+Main search:
+🔍 Search help articles...
+
+Example:
+Search: attendance
+
+Results:
+
+📅 How to record attendance
+📅 How to edit attendance
+📊 How to view attendance reports
+⚠️ Attendance threshold explained
+
+# FAQ SECTION
+
+Example:
+FREQUENTLY ASKED QUESTIONS
+
+▼ How do I add a new student?
+  Go to Students → Add Student and fill in
+  the required information.
+
+▼ How do I issue a library book?
+  Go to Library → Issue Book.
+
+▼ How do I generate a report?
+  Go to Reports → Select Report Type → Generate.
+
+▼ How does the AI Assistant work?
+  The AI analyzes available system data and
+  provides summaries and answers.
+
+Use expandable questions instead of showing huge amounts of text at once.
+
+# REPORT A BUG 🐛
+
+Click:
+[ 🐛 Report Bug ]
+
+Open:
++------------------------------------------------+
+|              Report a Problem                  |
+|                                                |
+| Problem Title                                  |
+| [_______________________________]              |
+|                                                |
+| Category                                       |
+| [▼ Technical Issue]                            |
+|                                                |
+| Description                                    |
+| [___________________________________________]  |
+| [___________________________________________]  |
+|                                                |
+| Priority                                       |
+| [▼ Normal]                                     |
+|                                                |
+| Screenshot                                     |
+| [ 📎 Attach File ]                             |
+|                                                |
+| [ Cancel ]          [ Submit Report ]          |
++------------------------------------------------+
+
+# PROBLEM CATEGORIES
+
+[▼ Category]
+
+Technical Issue
+Login Problem
+Data Problem
+AI Problem
+Library Problem
+Attendance Problem
+Fee Problem
+Other
+
+# PRIORITY
+
+Low
+Normal
+High
+Critical
+
+Don't allow students to mark everything as critical without moderation.
+
+# TICKET CREATED
+
+After submission:
++-----------------------------------------------+
+|               ✓ Ticket Created                |
+|                                               |
+| Ticket ID: SUP-2026-0047                    |
+|                                               |
+| Your support request has been submitted.      |
+|                                               |
+| Status: 🟡 Open                              |
+|                                               |
+| [ View Ticket ]             [ Done ]          |
++-----------------------------------------------+
+
+# MY TICKETS
+
+Click:
+[ 🎫 My Tickets ]
+
+Show:
+MY SUPPORT TICKETS
+
+Ticket ID    Problem              Status       Updated
+--------------------------------------------------------
+SUP-0047     Login issue          🟡 Open       Today
+SUP-0042     AI error             🔵 In Progress Yesterday
+SUP-0038     Data issue            🟢 Resolved    05 Aug
+
+# TICKET DETAILS
+
++------------------------------------------------+
+| Ticket: SUP-2026-0047                         |
+|                                                |
+| Login issue                                    |
+|                                                |
+| Status: 🟡 Open                               |
+| Created: 11 Aug 2026                           |
+|                                                |
+| Description:                                   |
+| Unable to log into my account.                 |
+|                                                |
+| ────────────────────────────────────────────── |
+|                                                |
+| Support Team                                   |
+| Please try resetting your password.            |
+|                                                |
+| ────────────────────────────────────────────── |
+|                                                |
+| [ Add Reply ]                                  |
++------------------------------------------------+
+
+# AI HELP 🤖
+
+This is the best integration with your AI Assistant.
+
+🤖 AI HELP
+
+Ask:
+
+"How do I add a new student?"
+
+AI:
+
+Go to Students → Add Student.
+Fill in the required fields and select
+Save Student.
+
+[ Open Students ]
+
+The AI can provide navigation/help instructions, rather than modifying important records itself.
+
+# CONTACT ADMIN
+
+Optional:
+Need more help?
+
+[ Contact Administrator ]
+
+Form:
+Subject
+[________________________]
+
+Message
+[________________________]
+[________________________]
+
+[ Send Message ]
+
+# EMPTY STATE
+
+For tickets:
+                🎫
+
+          No Support Tickets
+
+You haven't submitted any support
+requests yet.
+
+             [ Report a Problem ]
+
+# NAVIGATION
+
+Help & Support
+      │
+      ├── Search Help
+      ├── FAQs
+      ├── Report Bug
+      ├── My Tickets
+      ├── Ticket Details
+      └── AI Help
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+Later add:
+
+1. Searchable knowledge base
+2. FAQ system
+3. Support tickets
+4. Ticket status tracking
+5. File/screenshot attachments
+6. Admin replies
+7. AI-powered help
+8. Automatic FAQ suggestions
+9. Bug categorization
+10. Ticket priority
+11. Support analytics

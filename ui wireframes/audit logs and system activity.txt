@@ -1,0 +1,266 @@
+THIS SCREEN RECORDS IMPORTANT ACTIONS PERFORMED INSIDE YOUR SYSTEM. IT IS MAINLY FOR THE ADMIN/SUPER ADMIN.
+
+# PURPOSE
+
+Admin can:
+
+1. See who performed an action
+2. See what action was performed
+3. See when it happened
+4. See which module was affected
+5. Search logs
+6. Filter logs
+7. View detailed activity
+8. Export logs
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Super Admin      🌙             |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Audit Logs & System Activity                                          |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Monitor important system activity                                     |
+| 👥 Users             |                                                                         |
+| 👨‍🎓 Students         |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 👨‍🏫 Teachers         |  │Today's     │ │Logins      │ │Updates     │ │Warnings    │       |
+| 📚 Courses           |  │ Activities │ │    42      │ │    87      │ │     3      │       |
+| 📅 Attendance        |  │    156     │ │            │ │            │ │            │       |
+| 📝 Marks             |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| 💰 Fees              |                                                                         |
+| 📖 Library           |  [ 🔍 Search activity......................... ]                 |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  User [▼ All]  Module [▼ All]  Action [▼ All]  Date [📅]       |
+| 🤖 AI Assistant      |                                                                         |
+| 🔔 Notifications     |  -----------------------------------------------------------------------|
+| ⚙ Settings           |  | Time | User | Action | Module | Status | Details |          |
+| 👤 Profile            |  -----------------------------------------------------------------------|
+| 📋 Audit Logs ←      |  |09:30| Admin | Created | Student | 🟢 | View |        |
+| 🚪 Logout            |  |09:25| Admin | Updated | Marks   | 🟢 | View |        |
+|                      |  |09:10| Rahul | Login   | Auth    | 🟢 | View |        |
+|                      |  |08:55| Admin | Deleted | Book    | ⚠️ | View |        |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |                  [ < ] 1 2 3 4 5 [ > ]                         |
++----------------------+-------------------------------------------------------------------------+
+
+# WHAT SHOULD BE LOGGED?
+
+Don't log every tiny UI interaction.
+Log important events such as:
+
+Authentication
+User logged in
+User logged out
+Failed login
+Password changed
+Account suspended
+
+Students
+Student created
+Student updated
+Student deleted
+
+Marks
+Marks added
+Marks updated
+Marks deleted
+
+Attendance
+Attendance recorded
+Attendance modified
+
+Fees
+Payment recorded
+Fee updated
+Fee status changed
+
+Library
+Book added
+Book issued
+Book returned
+Book deleted
+
+Users
+User created
+Role changed
+Permission changed
+Account deactivated
+
+# LOG TABLE
+
+Each entry should contain:
+
+Time    |    User   |    Action  |   Module  |   Status  |   Details
+09:30   |    Admin  |    Created |   Student |    🟢     |    View
+09:25   |    Admin  |    Updated |   Marks   |    🟢     |    View
+09:10   |    Rahul  |    Login   |   Auth    |    🟢     |    View
+08:55   |    Admin  |    Deleted |   Book    |    ⚠️     |    View
+
+# SEARCH
+
+Search by:
+🔍 Search activity...
+
+Could match:
+
+1. User name
+2. User ID
+3. Action
+4. Module
+5. Record ID
+
+Example:
+Search: Rahul
+
+→ Rahul logged in
+→ Rahul viewed attendance
+→ Rahul viewed marks
+
+# FILTERS
+
+User
+[▼ All Users]
+
+Module
+[▼ All Modules]
+
+Action
+[▼ All Actions]
+
+Status
+[▼ All]
+
+Date
+[📅 Start] — [📅 End]
+
+Modules:
+Authentication
+Students
+Teachers
+Courses
+Attendance
+Marks
+Fees
+Library
+Reports
+Users
+Settings
+AI
+
+# ACTIVITY DETAILS
+
+Click View:
++------------------------------------------------+
+|              Activity Details                  |
+|                                                |
+| Action: Updated Student                        |
+|                                                |
+| Performed By: Admin                            |
+| User ID: U001                                  |
+|                                                |
+| Module: Students                               |
+| Student ID: STU2026001                         |
+|                                                |
+| Date: 11/08/2026                               |
+| Time: 09:25 AM                                 |
+|                                                |
+| Changes:                                       |
+| Attendance: 82% → 85%                          |
+|                                                |
+| Status: 🟢 Successful                          |
+|                                                |
+| [ Close ]                                      |
++------------------------------------------------+
+
+# BEFORE & AFTER CHANGES ⭐
+
+For important updates, store the difference:
+FIELD              BEFORE       AFTER
+
+Email              old@email    new@email
+Semester            1            2
+Attendance          82%          85%
+
+This is a strong professional feature.
+
+# FAILED ACTION
+
+If an operation fails:
+⚠️ Failed
+
+Admin attempted to delete Book B001.
+
+Reason:
+Book currently has active borrowers.
+
+This is useful for debugging and security auditing.
+
+# SECURITY
+
+Audit logs should be:
+
+Visible only to authorized administrators
+Difficult for normal users to modify
+Timestamped automatically
+Associated with the authenticated user
+Stored separately from ordinary UI state
+
+For your project, don't give ordinary students or teachers access to audit logs.
+
+# EXPORT
+
+Top-right:
+[ Export ▼ ]
+
+├── PDF
+├── Excel
+└── CSV
+
+Example:
+Export logs
+Date: 01 Aug → 11 Aug
+Module: All
+User: All
+
+[ Export ]
+
+# EMPTY STATE
+
+                 📋
+
+          No Activity Found
+
+No audit logs match your
+current filters.
+
+             [ Clear Filters ]
+
+# NAVIGATION
+
+Admin
+ │
+ ▼
+Audit Logs
+ │
+ ├── Search
+ ├── Filter
+ ├── View Details
+ ├── Before/After Changes
+ └── Export
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+For your final project, aim for:
+
+1. Immutable audit records
+2. User identification
+3. Timestamp tracking
+4. Before/after values
+5. Failed-action logging
+6. Login activity
+7. Role/permission changes
+8. Exportable logs
+9. Admin-only access
+10. Search + advanced filtering

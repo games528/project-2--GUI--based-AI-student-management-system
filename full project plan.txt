@@ -1,20 +1,20 @@
 deadline = 31/08/2026
 
-1. PLANNING 5 left
+1. PLANNING 3 left
 
 1. define project requirements done 
 2. list all features done
-4. design ui wireframes 
-5. create folder structure
-6. initialize GIT repository
-7. create GITHUB repository
+3. design ui wireframes done
+4. create folder structure
+5. initialize GIT repository
+6. create GITHUB repository
 
-2. PROFESSIONAL FOLDER STRUCTURE 18 left 
+2. PROFESSIONAL FOLDER STRUCTURE 19 left 
 
 1. main.py
 2. gui/
 3. models/
-4. database/
+4. database.py
 5. services/
 6. utils/
 7. assets/
@@ -29,6 +29,7 @@ deadline = 31/08/2026
 16. requirements.txt
 17. license
 18. config.py
+19. database/
 
 3. AUTHENTICATION 5 left
 
@@ -44,18 +45,23 @@ deadline = 31/08/2026
 2. CRUD operations
 3. Foreign keys
 4. constraints
-5. backup 
-6. restore
+5. backup (in databse Management)
+6. restore (in databse Management)
 
-5. DASHBOARD 8 left
+5. main DASHBOARD 8 left
 
-1. total students
-2. boys/girls count
-3. average attendance
-4. average percentage
+1. dashboard
+2. sidebar
+3. navigation 
+4. quick action buttons
+5. total students
+6. boys/girls count
+7. average attendance
+8. average percentage
+9. recent activities
+
 5. top performer
 6. students needing attention
-7. recent activities
 8. quick action buttons
 
 6. STUDENT MANAGEMENT 9 left
@@ -208,9 +214,8 @@ deadline = 31/08/2026
 
 1. 50 + meaningful commits
 2. clear commit messages
-3. issues
-4. version releases
-5. repository description
+3. version releases
+4. repository description
 
 22. RESUME READY 7 left
 

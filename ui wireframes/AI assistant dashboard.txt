@@ -1,0 +1,274 @@
+THIS IS THE AI-POWERED CENTRAL SCREEN OF YOUR PROJECT. UNLIKE THE NORMAL DASHBOARD, THIS SCREEN LETS ADMINISTRATORS/TEACHERS ASK QUESTIONS ABOUT THE STUDENT-MANAGEMENT DATA AND RECEIVE USEFUL SUMMARIES.
+
+# PURPOSE
+
+The AI Assistant should be able to:
+
+1. Answer questions about student data
+2. Summarize attendance
+3. Analyze marks
+4. Identify academic patterns for staff review
+5. Summarize fee data
+6. Analyze course performance
+7. Explain generated reports
+8. Generate suggestions based on existing data
+9. Search system information using natural language
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  🤖 AI Assistant                                                       |
+|                      |                                                                         |
+| 🏠 Dashboard         |  AI-powered Student Management Assistant                              |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  ┌───────────────────────────────────────────────────────────────┐  |
+| 📚 Courses           |  │ 👤 You                                          ⋮              │  |
+| 📅 Attendance        |  │                                                               │  |
+| 📝 Marks             |  │ Show me students whose attendance is below 75%.              │  |
+| 💰 Fees              |  │                                                               │  |
+| 📖 Library           |  └───────────────────────────────────────────────────────────────┘  |
+| 📊 Reports           |                                                                         |
+| 📈 Analytics         |  ┌───────────────────────────────────────────────────────────────┐  |
+| 🤖 AI Assistant ←    |  │ 🤖 AI Assistant                                                 │  |
+| 🔔 Notifications     |  │                                                               │  |
+| ⚙ Settings           |  │ I found 12 students below 75% attendance.                   │  |
+| 👤 Profile           |  │                                                               │  |
+| 🚪 Logout            |  │ Would you like me to show their details?                     │  |
+|                      |  │                                                               │  |
+|                      |  └───────────────────────────────────────────────────────────────┘  |
+|                      |                                                                         |
+|                      |  QUICK ACTIONS                                                        |
+|                      |                                                                         |
+|                      |  [ 📅 Analyze Attendance ]   [ 📝 Analyze Marks ]                  |
+|                      |  [ 💰 Analyze Fees ]         [ 📊 Summarize Reports ]              |
+|                      |                                                                         |
+|                      |  ┌───────────────────────────────────────────────────────────────┐  |
+|                      |  │ Ask AI something...                              🎤  ➤       │  |
+|                      |  └───────────────────────────────────────────────────────────────┘  |
++----------------------+-------------------------------------------------------------------------+
+
+# CHAT AREA
+
+The center should look like a normal AI chat interface.
+
+User message
+👤 You
+
+Which course has the lowest average marks?
+
+AI response
+🤖 AI Assistant
+
+Based on the current marks data:
+
+Physics has the lowest average score at 69%.
+
+Would you like me to show the students
+who scored below the class average?
+
+# QUICK ACTIONS
+
+Instead of making the user type everything:
+QUICK ACTIONS
+
+📅 Analyze Attendance
+📝 Analyze Marks
+💰 Analyze Fees
+📚 Analyze Courses
+📖 Analyze Library
+📊 Summarize Reports
+
+Clicking one automatically creates an appropriate query.
+
+# EXAMPLE AI QUESTIONS
+
+Your interface can show suggestions:
+
+Try asking:
+
+• Which students have low attendance?
+• What is the average score in Python?
+• Which course has the highest average?
+• How much fee is still pending?
+• Summarize this month's attendance.
+• Which books are overdue?
+• Compare Python and DBMS performance.
+
+# AI ATTENDANCE ANALYSIS
+
+Example:
+👤 You
+
+Analyze attendance for Semester 1.
+
+🤖 AI
+
+Semester 1 attendance:
+
+Overall: 84.2%
+
+Students below 75%: 12
+Students above 90%: 31
+
+The lowest attendance is 61%.
+
+[ View Students ]
+
+The View Students button can take the user directly to the relevant filtered student/attendance screen.
+
+# AI MARKS ANALYSIS
+
+👤 You
+
+Analyze Python performance.
+
+🤖 AI
+
+Python average: 88%
+
+Highest score: 98%
+Lowest score: 42%
+
+8 students scored below 50%.
+
+The available data suggests that
+these students may benefit from additional
+academic support.
+
+[ View Performance ]
+
+Notice the wording: the AI should suggest, not make decisions about students.
+
+# AI FEE ANALYSIS
+
+👤 You
+
+How much fee is pending?
+
+🤖 AI
+
+Current fee summary:
+
+Total fees: ₹25,00,000
+Collected: ₹20,00,000
+Pending: ₹5,00,000
+
+₹1,20,000 is currently overdue.
+
+[ Open Fee Dashboard ]
+
+# AI REPORT SUMMARY
+
+From the Reports screen:
+[ Ask AI About This Report ]
+
+opens the AI Assistant with the report context.
+
+Example:
+🤖 AI
+
+This attendance report shows:
+
+• Overall attendance: 84.2%
+• 12 students below 75%
+• Highest attendance: 96%
+• Lowest attendance: 61%
+
+The largest concentration of low attendance
+is in Semester 1.
+
+# AI CONTEXT INDICATOR
+
+Very useful for transparency:
+📌 Data used:
+
+Students
+Attendance
+Marks
+Courses
+
+Last updated: 10 Aug 2026, 11:20 AM
+
+This helps the user understand where the AI's answer comes from.
+
+# LOADING STATE
+
+When AI is processing:
+🤖 AI Assistant
+
+Analyzing your data...
+
+● ● ●
+
+# ERROR STATE
+
+If the AI service fails:
+⚠ Unable to generate an AI response.
+
+The AI service is temporarily unavailable.
+
+[ Try Again ]
+
+Your application should not crash if the AI API is unavailable.
+
+# IMPORTANT AI SAFETY / ACCURACY FEATURE ⭐
+
+Add a small expandable section:
+ⓘ AI responses are generated from available
+system data and may require staff verification.
+
+[ How was this answer generated? ]
+
+For your project, this is actually a strong feature because it demonstrates that you understand that AI output shouldn't automatically be treated as fact.
+
+# CHAT HISTORY
+
+Optional sidebar:
+RECENT AI CHATS
+
+Today
+• Attendance analysis
+• Python performance
+
+Yesterday
+• Fee summary
+• Library analysis
+
+Clicking a conversation opens it again.
+
+# NAVIGATION
+
+AI Assistant
+      │
+      ├── Ask Question
+      │
+      ├── Attendance Analysis
+      │
+      ├── Marks Analysis
+      │
+      ├── Fee Analysis
+      │
+      ├── Course Analysis
+      │
+      ├── Library Analysis
+      │
+      └── Report Analysis
+
+# RESUME-LEVEL AI FEATURES ⭐⭐⭐
+
+Once the normal system is working, you can add:
+
+1. Natural-language database queries
+2. AI report summarization
+3. Attendance trend analysis
+4. Marks trend analysis
+5. Course comparison
+6. Student-support suggestions
+7. AI-generated insights
+8. Context-aware questions
+9. Chat history
+10. Explainable AI responses
+11. Role-based AI access

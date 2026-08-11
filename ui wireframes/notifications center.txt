@@ -1,0 +1,275 @@
+THIS SCREEN MANAGES ALL SYSTEM NOTIFICATIONS FOR STUDENTS, TEACHERS, AND ADMINISTRATORS.
+
+# PURPOSE
+
+Users should be able to:
+
+1. View notifications
+2. Mark notifications as read/unread
+3. Filter notifications
+4. Delete/dismiss notifications
+5. Open the related screen
+6. See important alerts
+7. Manage notification preferences
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔 ③       👤 Admin        🌙                |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Notifications                                                         |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Notifications                                      [⚙ Preferences]  |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  [ All ] [ Unread ] [ Academic ] [ Fees ] [ Library ]             |
+| 📚 Courses           |                                                                         |
+| 📅 Attendance        |  ---------------------------------------------------------------  |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  🔴  Fee Payment Overdue                              2h ago       |
+| 📖 Library           |      Rahul Kumar has ₹10,000 pending.                              |
+| 📊 Reports           |      [ View Fee Details ]                                          |
+| 📈 Analytics         |                                                                         |
+| 🤖 AI Assistant      |  🟡  Low Attendance                                   5h ago       |
+| 🔔 Notifications ←   |      12 students are below 75% attendance.                        |
+| ⚙ Settings           |      [ View Attendance ]                                           |
+| 👤 Profile            |                                                                         |
+| 🚪 Logout             |  🔵  Book Overdue                                     Yesterday    |
+|                      |      3 library books are overdue.                                  |
+|                      |      [ View Library ]                                               |
+|                      |                                                                         |
+|                      |  🟢  Report Generated                                  Yesterday    |
+|                      |      Monthly attendance report is ready.                           |
+|                      |      [ View Report ]                                                |
+|                      |                                                                         |
+|                      |  ---------------------------------------------------------------  |
+|                      |                                                                         |
+|                      |              [ Mark All as Read ]   [ Clear ]                     |
++----------------------+-------------------------------------------------------------------------+
+
+# NOTIFICATION CATEGORIES
+
+Use categories:
+🔴 Important
+🟡 Academic
+🔵 Library
+🟣 Fees
+🟢 System
+
+Examples:
+
+Academic
+
+Low attendance
+Marks published
+Exam result available
+Assignment deadline
+
+Fees
+
+Payment due
+Payment overdue
+Payment received
+
+Library
+
+Book issued
+Book due soon
+Book overdue
+Book returned
+
+System
+
+New course created
+Report generated
+Account/security notification
+
+# NOTIFICATION CARD
+
+Each notification should contain:
+🔴  Fee Payment Overdue
+
+Rahul Kumar has ₹10,000 pending.
+
+2 hours ago
+
+[ View Details ]
+
+Unread notifications should be visually distinguishable.
+
+For example:
+●  Fee Payment Overdue
+
+Read:
+   Fee Payment Overdue
+
+Don't rely only on color to distinguish them.
+
+# FILTERS
+
+[ All ] [ Unread ] [ Academic ] [ Fees ] [ Library ] [ System ]
+
+Example:
+
+Click Unread:
+Showing: 3 unread notifications
+
+# MARK AS READ
+
+Each notification can have:
+⋮
+├── Mark as read
+├── Open
+└── Delete
+
+And at the top:
+[ ✓ Mark All as Read ]
+
+# NOTIFICATION CLICK BEHAVIOR
+
+Notifications should take the user directly to the relevant page.
+
+Example:
+Fee overdue
+     ↓
+Click
+     ↓
+Fee Details
+     ↓
+Student's fee record
+
+Another:
+Low attendance
+     ↓
+Click
+     ↓
+Attendance Management
+     ↓
+Filtered students
+
+This makes the system feel much more connected.
+
+# NOTIFICATION PREFERENCES
+
+Click:
+[ ⚙ Preferences ]
+
+opens:
++------------------------------------------------+
+|           Notification Preferences             |
+|                                                |
+| Email Notifications                            |
+| [✓] Fee reminders                              |
+| [✓] Attendance alerts                         |
+| [ ] Library reminders                          |
+|                                                |
+| In-App Notifications                           |
+| [✓] Academic alerts                           |
+| [✓] System notifications                      |
+| [✓] AI insights                               |
+|                                                |
+|        [ Cancel ]       [ Save Preferences ]  |
++------------------------------------------------+
+
+# NOTIFICATION SETTINGS
+
+Allow users to control:
+
+1. In-app notifications
+2. Email notifications
+3. Academic alerts
+4. Fee alerts
+5. Library alerts
+6. System alerts
+
+For your first version, in-app notifications are enough. Email can be added later.
+
+# EMPTY STATE
+
+When there are no notifications:
++----------------------------------------------+
+|                                              |
+|                    🔔                        |
+|                                              |
+|            You're all caught up!             |
+|                                              |
+|          No new notifications.               |
+|                                              |
++----------------------------------------------+
+
+# DELETE CONFIRMATION
+
++--------------------------------------+
+|       Delete Notification?           |
+|                                      |
+| This notification will be removed.   |
+|                                      |
+| [ Cancel ]        [ Delete ]         |
++--------------------------------------+
+
+# NOTIFICATION GENERATION FLOW
+
+Your backend can generate notifications from events:
+Database Event
+     │
+     ├── Fee becomes overdue
+     │          ↓
+     │      Notification
+     │
+     ├── Attendance falls below threshold
+     │          ↓
+     │      Notification
+     │
+     ├── Book becomes overdue
+     │          ↓
+     │      Notification
+     │
+     └── Report generated
+                ↓
+            Notification
+
+# DASHBOARD NOTIFICATION BELL
+
+The same system connects to the top navigation:
+🔔 ③
+
+③ means 3 unread notifications.
+
+Clicking it opens a small preview:
++--------------------------------------+
+| Notifications                        |
+|                                      |
+| 🔴 Fee overdue              2h       |
+| 🟡 Low attendance           5h       |
+| 🔵 Book overdue             1d       |
+|                                      |
+| [ View All Notifications ]           |
++--------------------------------------+
+
+# NAVIGATION
+
+Notification Bell
+       │
+       ▼
+Notifications Center
+       │
+       ├── Academic
+       ├── Fees
+       ├── Library
+       ├── System
+       └── Preferences
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+Later add:
+
+1. Real-time notifications
+2. Role-based notifications
+3. Notification priority
+4. Email notifications
+5. Scheduled reminders
+6. Automatic fee reminders
+7. Automatic attendance alerts
+8. Library due-date reminders
+9. Notification history
+10. Read/unread tracking

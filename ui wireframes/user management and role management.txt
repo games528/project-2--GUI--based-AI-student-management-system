@@ -1,0 +1,294 @@
+THIS SCREEN IS FOR THE SUPER ADMIN/ADMINISTRATOR TO MANAGE WHO CAN ACCESS THE SYSTEM AND WHAT THEY ARE ALLOWED TO DO.
+
+THIS IS IMPORTANT BECAUSE YOUR PROJECT ALREADY HAS ADMIN, TEACHER, AND STUDENT ROLES.
+
+# PURPOSE
+
+Admin can:
+
+1. View all system users
+2. Add users
+3. Edit users
+4. Activate/deactivate accounts
+5. Assign roles
+6. Search users
+7. Filter users
+8. Reset passwords
+9. Manage permissions
+10. View account status
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Super Admin      🌙             |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  User Management                                                        |
+|                      |                                                                         |
+| 🏠 Dashboard         |  Manage Users & Permissions                                            |
+| 👥 Users       ←     |                                                                         |
+| 👨‍🎓 Students         |  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐       |
+| 👨‍🏫 Teachers         |  │Total Users │ │ Students   │ │ Teachers   │ │ Admins     │       |
+| 📚 Courses           |  │    900     │ │    850     │ │     45     │ │     5      │       |
+| 📅 Attendance        |  └────────────┘ └────────────┘ └────────────┘ └────────────┘       |
+| 📝 Marks             |                                                                         |
+| 💰 Fees              |  [ 🔍 Search name / email / ID................ ]  [+ Add User]      |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  Role [▼ All]   Status [▼ All]   [ Apply ]                         |
+| 📈 Analytics         |                                                                         |
+| 🤖 AI Assistant      |  -----------------------------------------------------------------------|
+| 🔔 Notifications     |  | User ID | Name | Email | Role | Status | Last Login | Action |
+| ⚙ Settings           |  -----------------------------------------------------------------------|
+| 👤 Profile            |  | U001 | Rahul | rahul@... | Student | 🟢 | Today | ⋮ |
+| 🚪 Logout            |  | U002 | Aman  | aman@...  | Teacher | 🟢 | Today | ⋮ |
+|                      |  | U003 | Admin | admin@... | Admin   | 🟢 | Today | ⋮ |
+|                      |  -----------------------------------------------------------------------|
+|                      |                                                                         |
+|                      |                    [ < ] 1 2 3 4 [ > ]                            |
++----------------------+-------------------------------------------------------------------------+
+
+# SUMMARY CARDS
+
+Total Users
+900
+Total Users
+
+Students
+850
+Students
+
+Teachers
+45
+Teachers
+
+Admins
+5
+Administrators
+
+These values should come from the database.
+
+# SEARCH
+
+Search by:
+🔍 Search:
+
+Name
+Email
+User ID
+
+Example:
+Search: Rahul
+
+→ Rahul Kumar
+   U001
+   rahul@example.com
+   Student
+
+# FILTERS
+
+Role
+
+[▼ All]
+Student
+Teacher
+Admin
+Librarian
+
+Status:
+[▼ All]
+Active
+Inactive
+Suspended
+
+# USER TABLE
+
+Example:
+
+User ID   |  Name         |    Email   |   Role    |   Status  |  Last Login  |   Action
+U001      |   Rahul Kumar |   rahul@...|   Student |    🟢    |    Today      |     ⋮
+U002      |   Aman Singh  |   aman@... |   Teacher |    🟢    |    Today      |     ⋮
+U003      |  Admin User   |  admin@... |    Admin  |    🟢    |    Today      |     ⋮
+
+# ACTION MENU
+
+Click ⋮:
++-----------------------------+
+| 👁 View User                |
+| ✏ Edit User                |
+| 🔑 Reset Password           |
+| 🛡 Manage Permissions       |
+| ⏸ Deactivate Account       |
+| 🗑 Delete User              |
++-----------------------------+
+
+Important: Don't allow deleting the last Super Admin account.
+
+# ADD USER
+
+Click:
+[ + Add User ]
+
+Modal:
++----------------------------------------------+
+|                 Add User                     |
+|                                              |
+| Full Name                                    |
+| [____________________________]               |
+|                                              |
+| Email                                        |
+| [____________________________]               |
+|                                              |
+| Role                                         |
+| [▼ Student]                                  |
+|                                              |
+| Password                                     |
+| [••••••••••••••••]                           |
+|                                              |
+| Confirm Password                             |
+| [••••••••••••••••]                           |
+|                                              |
+| Account Status                               |
+| [● Active]  [○ Inactive]                     |
+|                                              |
+| [ Cancel ]             [ Create User ]       |
++----------------------------------------------+
+
+# ROLE SYSTEM ⭐
+
+Your initial roles can be:
+SUPER ADMIN
+     │
+     ├── Full system access
+     │
+     ▼
+ADMIN
+     │
+     ├── Student management
+     ├── Course management
+     ├── Reports
+     └── Analytics
+     
+TEACHER
+     │
+     ├── Attendance
+     ├── Marks
+     └── Assigned courses
+
+STUDENT
+     │
+     ├── Own attendance
+     ├── Own marks
+     ├── Own fees
+     └── Library
+
+You can add Librarian later.
+
+# PERMISSION MANAGEMENT
+
+Click:
+🛡 Manage Permissions
+
+Display:
+PERMISSIONS
+
+                    View   Create   Edit   Delete
+--------------------------------------------------
+Students             ✓       ✓       ✓       ✓
+Attendance            ✓       ✓       ✓       -
+Marks                 ✓       ✓       ✓       -
+Courses               ✓       ✓       ✓       ✓
+Fees                  ✓       ✓       ✓       -
+Library               ✓       ✓       ✓       ✓
+Reports               ✓       -       -       -
+Analytics             ✓       -       -       -
+AI Assistant          ✓       -       -       -
+Settings              ✓       -       ✓       -
+
+This is a role-permission matrix.
+
+# ACCOUNT STATUS
+
+Status options:
+🟢 Active
+🟡 Inactive
+🔴 Suspended
+
+If an account is suspended:
+🔴 Account Suspended
+
+This user cannot log in until the
+account is activated again.
+
+# RESET PASSWORD
+
+Admin clicks:
+🔑 Reset Password
+
+Show:
++--------------------------------------+
+|         Reset User Password          |
+|                                      |
+| User: Rahul Kumar                   |
+|                                      |
+| [ Generate Temporary Password ]      |
+|                                      |
+| [ Cancel ]          [ Reset ]        |
++--------------------------------------+
+
+For a real application, handle password reset securely rather than displaying permanent passwords to admins.
+
+# DEACTIVATE ACCOUNT
+
++--------------------------------------+
+|       Deactivate Account?            |
+|                                      |
+| Rahul Kumar will no longer be able   |
+| to log in.                            |
+|                                      |
+| [ Cancel ]       [ Deactivate ]      |
++--------------------------------------+
+
+# AUDIT TRAIL ⭐
+
+Every important admin action should optionally be recorded:
+
+AUDIT LOG
+
+Admin created user U023
+10 Aug 2026 — 18:21
+
+Admin changed role of U017
+10 Aug 2026 — 18:24
+
+Admin suspended U041
+10 Aug 2026 — 18:26
+
+This makes the project significantly more professional.
+
+# NAVIGATION
+
+User Management
+      │
+      ├── Search Users
+      ├── Add User
+      ├── View User
+      ├── Edit User
+      ├── Manage Roles
+      ├── Manage Permissions
+      ├── Account Status
+      └── Audit Log
+
+RESUME-LEVEL FEATURES ⭐⭐⭐
+
+For the final version, aim for:
+
+1. Role-based access control (RBAC)
+2. Permission matrix
+3. User activation/deactivation
+4. Secure password reset
+5. Audit logs
+6. Session management
+7. Search & filtering
+8. Admin-only operations
+9. Protected routes/screens
+10. Different dashboards for different roles

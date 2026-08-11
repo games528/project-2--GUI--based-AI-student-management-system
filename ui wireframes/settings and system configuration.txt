@@ -1,0 +1,291 @@
+THIS IS WHERE THE ADMINISTRATOR CONTROLS THE APPLICATION'S GENERAL SETTINGS, ACADEMIC RULES, LIBRARY RULES, NOTIFICATIONS, AI SETTINGS, AND SECURITY PREFERENCES.
+
+# PURPOSE
+
+Admin can configure:
+
+1. College/system information
+2. Academic settings
+3. Attendance rules
+4. Library rules
+5. Fee settings
+6. Notification preferences
+7. AI settings
+8. Security settings
+9. Backup/data settings
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  Settings & Configuration                                              |
+|                      |                                                                         |
+| 🏠 Dashboard         |  SETTINGS                                                             |
+| 👨‍🎓 Students         |                                                                         |
+| 👨‍🏫 Teachers         |  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐ |
+| 📚 Courses           |  │ 🏫 General       │  │ 🎓 Academic      │  │ 📅 Attendance    │ |
+| 📅 Attendance        |  │ System details   │  │ Semester rules  │  │ Thresholds       │ |
+| 📝 Marks             |  └──────────────────┘  └──────────────────┘  └──────────────────┘ |
+| 💰 Fees              |                                                                         |
+| 📖 Library           |  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐ |
+| 📊 Reports           |  │ 📖 Library      │  │ 💰 Fees         │  │ 🔔 Notifications │ |
+| 📈 Analytics         |  │ Borrowing rules │  │ Payment rules   │  │ Alert settings  │ |
+| 🤖 AI Assistant      |  └──────────────────┘  └──────────────────┘  └──────────────────┘ |
+| 🔔 Notifications     |                                                                         |
+| ⚙ Settings     ←     |  ┌──────────────────┐  ┌──────────────────┐                  |
+| 👤 Profile            |  │ 🤖 AI Settings   │  │ 🔐 Security      │                  |
+| 🚪 Logout             |  │ AI configuration │  │ Password/access  │                  |
+|                      |  └──────────────────┘  └──────────────────┘                  |
+|                      |                                                                         |
+|                      |                    [ Save Changes ]                                |
++----------------------+-------------------------------------------------------------------------+
+
+# GENERAL SETTINGS
+
+Click 🏫 General:
++------------------------------------------------------+
+| General Settings                                     |
+|                                                      |
+| Institution Name                                     |
+| [ AI Student Management College................ ]   |
+|                                                      |
+| Institution Email                                    |
+| [ college@example.com.......................... ]   |
+|                                                      |
+| Phone                                                |
+| [ +91 XXXXXXXXXX............................... ]   |
+|                                                      |
+| Academic Year                                        |
+| [ 2026 - 2027 ]                                      |
+|                                                      |
+| Time Zone                                            |
+| [ Asia/Kolkata ▼ ]                                   |
+|                                                      |
+| [ Save Changes ]                                     |
++------------------------------------------------------+
+
+# ACADEMIC SETTINGS
+
+Configure:
+Academic Settings
+
+Current Academic Year
+[ 2026–2027 ]
+
+Current Semester
+[ Semester 1 ▼ ]
+
+Passing Percentage
+[ 40 ]
+
+Grading System
+[ Percentage ▼ ]
+
+[ Save ]
+
+Later you can support:
+CGPA
+Letter grades
+Multiple grading systems
+
+# ATTENDANCE SETTINGS
+
+Attendance Settings
+
+Minimum Attendance
+[ 75% ]
+
+Warning Threshold
+[ 80% ]
+
+Critical Threshold
+[ 65% ]
+
+Enable Low Attendance Notifications
+[ ✓ ]
+
+[ Save Changes ]
+
+These values should be configurable instead of hard-coded.
+
+# LIBRARY SETTINGS
+
+Library Settings
+
+Maximum Books Per Student
+[ 3 ]
+
+Default Borrowing Period
+[ 14 days ]
+
+Fine Per Overdue Day
+[ ₹10 ]
+
+Enable Overdue Notifications
+[ ✓ ]
+
+[ Save Changes ]
+
+This connects directly with your Issue Book and Return Book screens.
+
+# FEE SETTINGS
+
+Fee Settings
+
+Currency
+[ INR ₹ ]
+
+Enable Fee Reminders
+[ ✓ ]
+
+Reminder Before Due Date
+[ 7 days ]
+
+Enable Overdue Alerts
+[ ✓ ]
+
+[ Save Changes ]
+
+# NOTIFICATION SETTINGS
+
+Notification Settings
+
+Academic Alerts        [ ✓ ]
+Attendance Alerts      [ ✓ ]
+Fee Alerts             [ ✓ ]
+Library Alerts         [ ✓ ]
+System Alerts          [ ✓ ]
+AI Insights            [ ✓ ]
+
+Email Notifications   [  ]
+
+[ Save Changes ]
+
+# AI SETTINGS 🤖
+
+This is especially important for your project.
+AI Settings
+
+Enable AI Assistant
+[ ✓ ]
+
+AI Report Summaries
+[ ✓ ]
+
+AI Analytics Insights
+[ ✓ ]
+
+AI Attendance Analysis
+[ ✓ ]
+
+AI Marks Analysis
+[ ✓ ]
+
+AI Provider
+[ Select Provider ▼ ]
+
+Maximum Response Length
+[ Medium ▼ ]
+
+[ Save Changes ]
+
+Don't expose API keys directly in the normal UI.
+
+If you use an API key, store it securely in environment variables/backend configuration.
+
+# SECURITY SETTINGS 🔐
+
+Security
+
+Change Password
+[ Change Password ]
+
+Session Timeout
+[ 30 minutes ▼ ]
+
+Require Login
+[ ✓ ]
+
+Two-Factor Authentication
+[ Enable ]
+
+Login Attempt Protection
+[ ✓ ]
+
+For your first version, basic authentication + password hashing is enough.
+
+# BACKUP & DATA
+
+Add:
+Data Management
+
+Database Backup
+
+Last Backup:
+10 Aug 2026, 10:30 AM
+
+[ Create Backup ]
+
+[ Export Database ]
+
+[ Import Database ]
+
+⚠️ For your first version, don't build complicated cloud backup infrastructure. A local/database backup feature is sufficient.
+
+# SAVE CHANGES CONFIRMATION
+
+When the admin modifies settings:
++-----------------------------------------+
+|       Save Configuration?               |
+|                                         |
+| Your changes will affect the system.    |
+|                                         |
+| [ Cancel ]         [ Save Changes ]     |
++-----------------------------------------+
+
+# SUCCESS MESSAGE
+
+✅ Settings updated successfully.
+
+# UNSAVED CHANGES WARNING
+
+If the user tries to leave:
++-----------------------------------------+
+|        Unsaved Changes                  |
+|                                         |
+| You have unsaved changes.               |
+| Do you want to leave without saving?    |
+|                                         |
+| [ Stay ]     [ Leave Without Saving ]  |
++-----------------------------------------+
+
+# NAVIGATION
+
+Settings
+   │
+   ├── General
+   ├── Academic
+   ├── Attendance
+   ├── Library
+   ├── Fees
+   ├── Notifications
+   ├── AI
+   ├── Security
+   └── Backup & Data
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+Later add:
+
+1. Role-based settings
+2. Configurable academic rules
+3. Configurable attendance thresholds
+4. Configurable library borrowing limits
+5. Configurable fine rules
+6. AI configuration
+7. Database backup
+8. Audit logs
+9. Security controls
+10. Environment-based API configuration

@@ -1,0 +1,244 @@
+THIS SCREEN MANAGES THE LOGGED-IN USER'S PROFILE, ACCOUNT INFORMATION, PASSWORD, SECURITY, AND SESSION ACTIVITY.
+
+# PURPOSE
+
+Admin can:
+
+1. View profile
+2. Edit personal information
+3. Change password
+4. Manage security
+5. View login/session activity
+6. Log out other sessions
+
+# FULL WIREFRAME
+
++------------------------------------------------------------------------------------------------+
+| 🎓 AI STUDENT MANAGEMENT                         🔔        👤 Admin        🌙                   |
++------------------------------------------------------------------------------------------------+
+|                      |                                                                         |
+| SIDEBAR              |  My Profile                                                            |
+|                      |                                                                         |
+| 🏠 Dashboard         |  ┌───────────────────────────────────────────────────────────────┐  |
+| 👨‍🎓 Students         |  │                         👤                                    │  |
+| 👨‍🏫 Teachers         |  │                       Admin                                   │  |
+| 📚 Courses           |  │                  Administrator                                │  |
+| 📅 Attendance        |  │                                                               │  |
+| 📝 Marks             |  │              [ Change Photo ]                                  │  |
+| 💰 Fees              |  └───────────────────────────────────────────────────────────────┘  |
+| 📖 Library           |                                                                         |
+| 📊 Reports           |  PERSONAL INFORMATION                                                 |
+| 📈 Analytics         |                                                                         |
+| 🤖 AI Assistant      |  Full Name        [ Admin User........................ ]          |
+| 🔔 Notifications     |  Email            [ admin@example.com.................. ]          |
+| ⚙ Settings           |  Phone            [ +91 XXXXXXXXXX..................... ]          |
+| 👤 Profile      ←    |                                                                         |
+| 🚪 Logout            |  ROLE & ACCOUNT                                                       |
+|                      |                                                                         |
+|                      |  Role             Administrator 🔒                                  |
+|                      |  Account Status   🟢 Active                                         |
+|                      |  Account Created  10/08/2026                                       |
+|                      |                                                                         |
+|                      |  [ Edit Profile ]       [ Save Changes ]                            |
+|                      |                                                                         |
+|                      |  SECURITY                                                             |
+|                      |                                                                         |
+|                      |  Password         ••••••••••••       [ Change Password ]           |
+|                      |  2FA              Disabled             [ Enable ]                   |
+|                      |                                                                         |
+|                      |  [ View Login Activity ]                                             |
++----------------------+-------------------------------------------------------------------------+
+
+# PROFILE HEADER
+
+Display:
+        👤
+    Admin User
+  Administrator
+
+Optional:
+[ Change Profile Picture ]
+
+For the first version, you can skip image uploading if you want to keep development focused.
+
+# PERSONAL INFORMATION
+
+Fields:
+Full Name
+[ Admin User ]
+
+Email
+[ admin@example.com ]
+
+Phone
+[ +91 XXXXXXXXXX ]
+
+Email can be read-only if it's used as the account identifier.
+
+# ACCOUNT INFORMATION
+
+ROLE
+
+Administrator 🔒
+
+STATUS
+
+🟢 Active
+
+CREATED
+
+10 August 2026
+
+The admin shouldn't be able to change their own role from this screen.
+
+Role management belongs to a separate admin/user-management system.
+
+# EDIT PROFILE
+
+Click:
+[ Edit Profile ]
+
+Fields become editable:
+Full Name
+[ Admin User........................ ]
+
+Phone
+[ +91 XXXXXXXXXX................... ]
+
+        [ Cancel ] [ Save Changes ]
+
+# CHANGE PASSWORD
+
+Click:
+[ Change Password ]
+
+Modal:
++---------------------------------------------+
+|             Change Password                 |
+|                                             |
+| Current Password                            |
+| [••••••••••••••••]                          |
+|                                             |
+| New Password                                |
+| [••••••••••••••••]                          |
+|                                             |
+| Confirm Password                            |
+| [••••••••••••••••]                          |
+|                                             |
+| Password Strength                           |
+| ████████░░ Strong                           |
+|                                             |
+| [ Cancel ]          [ Update Password ]     |
++---------------------------------------------+
+
+# PASSWORD VALIDATION
+
+Check:
+
+Current password is correct
+New password meets your minimum requirements
+New password and confirmation match
+New password differs from the old password
+
+Errors:
+
+❌ Current password is incorrect.
+
+❌ Passwords do not match.
+
+❌ Password doesn't meet the required criteria.
+
+# TWO-FACTOR AUTHENTICATION
+
+Two-Factor Authentication
+
+Status: 🔴 Disabled
+
+[ Enable 2FA ]
+
+When enabled:
+Status: 🟢 Enabled
+
+[ Manage 2FA ]
+
+For your first project version, this can remain optional.
+
+# LOGIN ACTIVITY
+
+Click:
+[ View Login Activity ]
+
+Display:
+LOGIN ACTIVITY
+
+Device             Location       Date             Status
+------------------------------------------------------------
+Chrome / Windows   India          10 Aug 11:20     🟢 Current
+Android            India          09 Aug 18:30     Active
+Chrome / Windows   India          08 Aug 14:10     Logged out
+
+Don't expose overly precise location information. Country/city-level information is enough for a student project.
+
+# ACTIVE SESSIONS
+
+Optional:
+ACTIVE SESSIONS
+
+Chrome — Windows
+Current session
+
+Android
+Last active: 2 hours ago
+
+[ Log Out Other Sessions ]
+
+Confirmation:
+Log out of all other sessions?
+
+[ Cancel ] [ Log Out ]
+
+# PROFILE UPDATE SUCCESS
+
+✅ Profile updated successfully.
+
+Password:
+✅ Password changed successfully.
+
+# LOGOUT
+
+Sidebar:
+🚪 Logout
+
+Confirmation:
++---------------------------------------+
+|            Logout?                    |
+|                                       |
+| Are you sure you want to log out?    |
+|                                       |
+| [ Cancel ]         [ Logout ]         |
++---------------------------------------+
+
+# NAVIGATION
+
+Profile
+   │
+   ├── Personal Information
+   ├── Edit Profile
+   ├── Change Password
+   ├── 2FA
+   ├── Login Activity
+   └── Active Sessions
+
+# RESUME-LEVEL FEATURES ⭐⭐⭐
+
+Later add:
+
+1. Secure password hashing
+2. 2FA
+3. Login history
+4. Session management
+5. Profile picture
+6. Account activity log
+7. Password strength indicator
+8. Logout from all devices
+9. Role-based access control
