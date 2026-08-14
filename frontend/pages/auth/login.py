@@ -1,5 +1,8 @@
 import customtkinter as ctk
+from services.password_service import verify_password
+from services.remember_service import (save_remember_login, clear_remember_login, load_remember_login)
 from numpy import pad
+
 def toggle_password():
     if password_entry.cget("show") == "*":
         password_entry.configure(show = "")
@@ -21,6 +24,10 @@ def validate_login():
         error_label.configure(text = "please enter your password")
         return
     if authenticate_user(username,password):
+        if remember_var.get():
+            save_remember_login(username)
+        else:
+            clear_remember_login()
         error_label.configure(text = "Login successful")
     else:
         error_label.configure(text = "invalid username or password")
@@ -50,8 +57,18 @@ password_entry.pack(side = "left")
 show_password_button = ctk.CTkButton(password_frame, text = "(.)", width= 40, height = 40, command = toggle_password)
 show_password_button.pack(side = "left", padx = (5,0))
 
-remember_me = ctk.CTkCheckBox(main_frame, text = "Remember me")
+remember_var = ctk.BooleanVar(value = False)
+remember_me = ctk.CTkCheckBox(main_frame, text = "Remember Me", variable = remember_var)
 remember_me.pack(anchor = "w", padx =75, pady = (5, 15))
+
+def check_remembered_login():
+    username = load_remember_login()
+    if username:
+        username_entry.delete(0,"end")
+        username_entry.insert(0, username)
+        remember_var.set(True)
+        password_entry.focus()
+check_remembered_login()
 
 error_label = ctk.CTkLabel(main_frame,text = "",text_color = "red", font = ctk.CTkFont(size = 14))
 error_label.pack(pady = (0,5))
