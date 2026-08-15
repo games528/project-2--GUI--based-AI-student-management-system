@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from services.password_service import verify_password
 from services.remember_service import (save_remember_login, clear_remember_login, load_remember_login)
+from services.auth_service import set_current_user, logout_user, get_current_user   
 from numpy import pad
 
 def toggle_password():
@@ -24,6 +25,7 @@ def validate_login():
         error_label.configure(text = "please enter your password")
         return
     if authenticate_user(username,password):
+        set_current_user(username)
         if remember_var.get():
             save_remember_login(username)
         else:
@@ -31,6 +33,13 @@ def validate_login():
         error_label.configure(text = "Login successful")
     else:
         error_label.configure(text = "invalid username or password")
+
+def handle_logout():
+    logout_user()
+    username_entry.delete(0, "end")
+    password_entry.delete(0, "end")
+    remember_var.set(False)
+    print("User logged out successfully")
 
 
 
@@ -75,5 +84,8 @@ error_label.pack(pady = (0,5))
 
 login_button = ctk.CTkButton(main_frame, text = "Login", width = 300, height = 40, command = validate_login)
 login_button.pack(pady = (10, 20))
+
+logout_button = ctk.CTkButton(main_frame, text = "Logout", command = handle_logout)
+logout_button.pack(pady = 10)
 
 app.mainloop()

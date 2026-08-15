@@ -22,6 +22,6 @@ def load_remember_login():
         return data.get("username")
     return None 
 
-save_remember_login()
+save_remember_login("username")
 clear_remember_login()
 load_remember_login()
