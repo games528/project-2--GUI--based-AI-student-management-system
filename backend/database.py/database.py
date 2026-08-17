@@ -15,7 +15,7 @@ def create_student_table():
     if connection is None:
         return
     cursor = connection.cursor()
-    cursor.execute("""create table if not exists students (student_id integer primary key autoincrement, name text not null, email text, phone text)""")
+    cursor.execute("""create table if not exists students (student_id integer primary key autoincrement, name text not null, email text not null unique, phone text not null check(length(phone) = 10))""")
     connection.commit()
     connection.close()
 
@@ -60,3 +60,4 @@ def delete_student(student_id):
     deleted = cursor.rowcount > 0
     connection.close()
     return deleted
+
