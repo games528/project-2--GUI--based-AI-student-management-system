@@ -4,7 +4,8 @@ database_name = "student_management.db"
 
 def get_connection():
     try:
-        connection = sqlite3.connect(database_name)
+        connection = sqlite3.connect("student_management.db")
+        connection.execute("pragma foreign_keys = ON")
         return connection
     except sqlite3.error as error:
         print("database connection error: ", error)
@@ -16,6 +17,15 @@ def create_student_table():
         return
     cursor = connection.cursor()
     cursor.execute("""create table if not exists students (student_id integer primary key autoincrement, name text not null, email text not null unique, phone text not null check(length(phone) = 10))""")
+    connection.commit()
+    connection.close()
+
+def create_academic_records_table():
+    connection  = get_connection()
+    if connection is None:
+        return
+    cursor = connection.cursor()
+    cursor.execute("""create table if not exists academic_records (record_id integer primary key autoincrement, student_id integer not null, subject text not null, marks integer, foreign key(student_id) references students(student_id))""")
     connection.commit()
     connection.close()
 
