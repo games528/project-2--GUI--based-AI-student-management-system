@@ -1,3 +1,4 @@
+from os import path
 from pathlib import Path
 import shutil
 import os
@@ -28,19 +29,10 @@ def backup_database():
 
     return backup_path
 
-if __name__ == "__main__":
-    backup_folder = Path("exports/backups")
-    backup_files = list(backup_folder.glob("*.db"))
-    if backup_files:
-        latest_backup = max(backup_files, key=lambda file: file.stat().st_mtime)
-        print("latest backup:", latest_backup)
-        connection = sqlite3.connect(latest_backup)
-        cursor = connection.cursor()
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-        tables = cursor.fetchall()
-        print("tables in backup: ")
-        for table in tables:
-            print(table[0])
-        connection.close()
-else:
-    print("no backup files found.")
+def restore_database(backup_path):
+    database_path = Path("student_management.db")
+    if not backup_path.exists():
+        raise FileNotFoundError("backup file not found.")
+    shutil.copy2(backup_path, database_path)
+    print("database restored successfully.")
+
