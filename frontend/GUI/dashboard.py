@@ -1,7 +1,11 @@
+from frontend.GUI.sidebar import create_sidebar
 import tkinter as tk
 
 def show_dashboard(root):
+    create_sidebar(root)
+    print("sidebar created in dashboard")
     dashboard_frame = tk.Frame(root, bg="#f5f6fa")
+    dashboard_frame.pack(side="right", fill="both", expand=True)
 
     # Main title
     title_label = tk.Label(
@@ -39,8 +43,6 @@ def show_dashboard(root):
         bg="white"
     )
     content_label.pack(expand=True)
-
-    dashboard_frame.pack(fill="both", expand=True)
 
     return dashboard_frame
 
