@@ -12,8 +12,7 @@ def show_dashboard(root):
         dashboard_frame,
         text="Student Management Dashboard",
         font=("Arial", 24, "bold"),
-        bg="#f5f6fa"
-    )
+        bg="#f5f6fa")
     title_label.pack(pady=(40, 10))
 
     # Welcome text
