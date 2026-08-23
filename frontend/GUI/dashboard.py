@@ -3,7 +3,6 @@ import tkinter as tk
 
 def show_dashboard(root):
     create_sidebar(root)
-    print("sidebar created in dashboard")
     dashboard_frame = tk.Frame(root, bg="#f5f6fa")
     dashboard_frame.pack(side="right", fill="both", expand=True)
 

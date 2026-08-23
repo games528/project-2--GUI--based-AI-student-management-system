@@ -41,17 +41,3 @@ def create_sidebar(root):
 
     return sidebar
 
-if __name__ == "__main__":
-    print("SIDEBAR TEST STARTED")
-
-    root = tk.Tk()
-    root.title("Sidebar Test")
-    root.geometry("1000x600")
-
-    create_sidebar(root)
-
-    print("SIDEBAR CREATED")
-
-    root.mainloop()
-
-    print("SIDEBAR TEST ENDED")
