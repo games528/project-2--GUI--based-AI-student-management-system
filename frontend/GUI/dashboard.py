@@ -1,10 +1,13 @@
 from frontend.GUI.sidebar import create_sidebar
+from frontend.GUI.quick_actions import create_quick_actions
 import tkinter as tk
 
 def show_dashboard(root):
     create_sidebar(root)
     dashboard_frame = tk.Frame(root, bg="#f5f6fa")
     dashboard_frame.pack(side="right", fill="both", expand=True)
+    
+    
 
     # Main title
     title_label = tk.Label(
@@ -41,7 +44,9 @@ def show_dashboard(root):
         bg="white"
     )
     content_label.pack(expand=True)
-
+    quick_actions_frame = create_quick_actions(dashboard_frame)
+    quick_actions_frame.pack(side="top", fill="x", padx=50, pady=20)
+    
     return dashboard_frame
 
 if __name__ == "__main__":
