@@ -1,6 +1,22 @@
 from frontend.GUI.sidebar import create_sidebar
 from frontend.GUI.quick_actions import create_quick_actions
+from backend.database import get_connection
+from backend.database import create_student_table, create_academic_records_table
 import tkinter as tk
+
+def get_total_students():
+    conn = get_connection()
+    if conn is None:
+        return 0
+
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT count(*) from students ")
+    total = cursor.fetchone()[0]
+
+    conn.close()
+
+    return total
 
 def show_dashboard(root):
     create_sidebar(root)
@@ -44,14 +60,52 @@ def show_dashboard(root):
         bg="white"
     )
     content_label.pack(expand=True)
-    quick_actions_frame = create_quick_actions(dashboard_frame)
-    quick_actions_frame.pack(side="top", fill="x", padx=50, pady=20)
+    
+    total_students_card = tk.Frame(
+    dashboard_frame,
+    bg="white",
+    width=220,
+    height=120
+)
+
+    total_students_card.pack(
+    side="left",
+    padx=20,
+    pady=20
+)
+
+    total_students_card.pack_propagate(False)
+
+    total_students_title = tk.Label(   
+    total_students_card,
+    text="Total Students",
+    font=("Arial", 14, "bold"),
+    bg="white"
+)
+
+    total_students_title.pack(pady=(20, 5))
+
+    total_students_value = tk.Label(
+    total_students_card,
+    text=str(get_total_students()),
+    font=("Arial", 24, "bold"),
+    bg="white"
+)
+
+    total_students_value.pack()
+    def refresh_total_students():
+        total_students_value.config(text=str(get_total_students()))
+    quick_actions_frame = create_quick_actions(dashboard_frame, refresh_total_students)
+    quick_actions_frame.pack(side = "top", fill = "x", padx = 50, pady = (10,20))
+    print("total students: ", get_total_students())
     
     return dashboard_frame
 
 if __name__ == "__main__":
+    create_student_table()
+    create_academic_records_table()
     root = tk.Tk()
-    root.title("Student Management System")
+    root.title("student management system")
     root.geometry("900x600")
     show_dashboard(root)
     root.mainloop()

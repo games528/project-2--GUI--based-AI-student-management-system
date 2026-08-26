@@ -1,10 +1,11 @@
 import sqlite3
-
-database_name = "student_management.db"
+import os
+base_dir = os.path.dirname(os.path.abspath(__file__))
+database_name = os.path.join(base_dir,"student_management.db") 
 
 def get_connection():
     try:
-        connection = sqlite3.connect("student_management.db")
+        connection = sqlite3.connect(database_name)
         connection.execute("pragma foreign_keys = ON")
         return connection
     except sqlite3.error as error:
