@@ -72,3 +72,67 @@ def delete_student(student_id):
     connection.close()
     return deleted
 
+def add_gender_column():
+    connection = get_connection()
+
+    if connection is None:
+        return
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "PRAGMA table_info(students)"
+    )
+
+    columns = cursor.fetchall()
+
+    column_names = [column[1] for column in columns]
+
+    if "gender" not in column_names:
+        cursor.execute(
+            "ALTER TABLE students ADD COLUMN gender TEXT"
+        )
+
+        connection.commit()
+
+    connection.close()
+
+def get_boys_count():
+    connection = get_connection()
+
+    if connection is None:
+        return 0
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM students WHERE gender = ?",
+        ("Male",)
+    )
+
+    count = cursor.fetchone()[0]
+
+    connection.close()
+
+    return count
+
+
+def get_girls_count():
+    connection = get_connection()
+
+    if connection is None:
+        return 0
+
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM students WHERE gender = ?",
+        ("Female",)
+    )
+
+    count = cursor.fetchone()[0]
+
+    connection.close()
+
+    return count
+

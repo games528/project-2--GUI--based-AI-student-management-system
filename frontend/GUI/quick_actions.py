@@ -16,7 +16,7 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#f5f6fa"
     )
 
-    title.pack(pady=(10, 15))
+    title.pack(pady=(5, 10))
 
     # Frame for buttons
     buttons_frame = tk.Frame(
@@ -24,7 +24,7 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#f5f6fa"
     )
 
-    buttons_frame.pack()
+    buttons_frame.pack(fill="x", padx=10)
 
     # Add Student
     add_student_button = tk.Button(
@@ -34,8 +34,8 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#3498db",
         fg="white",
         relief="flat",
-        padx=20,
-        pady=10,
+        padx=5,
+        pady=5,
         command=lambda: (
             refresh_total_students()
             if refresh_total_students else None
@@ -44,7 +44,7 @@ def create_quick_actions(parent, refresh_total_students=None):
 
     add_student_button.pack(
         side="left",
-        padx=5
+        padx=3
     )
 
     # View Students
@@ -55,14 +55,14 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#2ecc71",
         fg="white",
         relief="flat",
-        padx=20,
-        pady=10,
+        padx=5,
+        pady=5,
         command=lambda: print("View Students clicked")
     )
 
     view_students_button.pack(
         side="left",
-        padx=5
+        padx=3
     )
 
     # Add Academic Record
@@ -73,14 +73,14 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#9b59b6",
         fg="white",
         relief="flat",
-        padx=20,
-        pady=10,
+        padx=5,
+        pady=5,
         command=lambda: print("Add Academic Record clicked")
     )
 
     add_academic_record_button.pack(
         side="left",
-        padx=5
+        padx=3
     )
 
     # Mark Attendance
@@ -91,14 +91,14 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#e67e22",
         fg="white",
         relief="flat",
-        padx=20,
-        pady=10,
+        padx=5,
+        pady=5,
         command=lambda: print("Mark Attendance clicked")
     )
 
     mark_attendance_button.pack(
         side="left",
-        padx=5
+        padx=3
     )
 
     # Generate Report
@@ -109,14 +109,14 @@ def create_quick_actions(parent, refresh_total_students=None):
         bg="#1abc9c",
         fg="white",
         relief="flat",
-        padx=20,
-        pady=10,
+        padx=5,
+        pady=5,
         command=lambda: print("Generate Report clicked")
     )
 
     generate_report_button.pack(
         side="left",
-        padx=5
+        padx=3
     )
 
     return quick_actions_frame
