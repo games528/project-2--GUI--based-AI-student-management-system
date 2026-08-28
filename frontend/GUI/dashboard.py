@@ -3,7 +3,7 @@ from frontend.GUI.quick_actions import create_quick_actions
 from backend.database import get_connection
 from backend.database import create_student_table, create_academic_records_table
 import tkinter as tk
-from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count,create_attendance_table,get_average_attendance)
+from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count,create_attendance_table,get_average_attendance,get_average_percentage)
 
 def get_total_students():
     conn = get_connection()
@@ -203,6 +203,38 @@ def show_dashboard(root):
 )
 
     attendance_value.pack()
+    percentage_card = tk.Frame(
+    stats_frame,
+    bg="white",
+    width=220,
+    height=80
+)
+
+    percentage_card.pack(
+    side="left",
+    padx=20,
+    pady=10
+)
+
+    percentage_card.pack_propagate(False)
+
+    percentage_title = tk.Label(
+    percentage_card,
+    text="Average Percentage",
+    font=("Arial", 14, "bold"),
+    bg="white"
+)
+
+    percentage_title.pack(pady=(20, 5))
+
+    percentage_value = tk.Label(
+    percentage_card,
+    text=str(get_average_percentage()) + "%",
+    font=("Arial", 24, "bold"),
+    bg="white"
+)
+
+    percentage_value.pack()
     def refresh_dashboard_stats():
      total_students_value.config(
         text=str(get_total_students())
@@ -219,6 +251,10 @@ def show_dashboard(root):
     attendance_value.config(
         text=str(get_average_attendance()) + "%"
     )
+    percentage_value.config(
+       text=str(get_average_percentage()) + "%"
+    )
+
     quick_actions_frame = create_quick_actions(dashboard_frame, refresh_dashboard_stats)
     quick_actions_frame.pack(side = "top", fill = "x", padx = 10, pady = (2,5))
     print("total students: ", get_total_students())

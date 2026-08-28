@@ -186,3 +186,26 @@ def get_average_attendance():
 
     return round(average, 2)
 
+def get_average_percentage():
+     connection = get_connection()
+
+     if connection is None:
+        return 0
+
+     cursor = connection.cursor()
+
+     cursor.execute("""
+        SELECT AVG(marks)
+        FROM academic_records
+        WHERE marks IS NOT NULL
+    """)
+
+     average = cursor.fetchone()[0]
+
+     connection.close()
+
+     if average is None:
+        return 0
+
+     return round(average, 2)
+
