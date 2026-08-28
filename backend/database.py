@@ -136,3 +136,53 @@ def get_girls_count():
 
     return count
 
+def create_attendance_table():
+    connection = get_connection()
+
+    if connection is None:
+        return
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS attendance_records (
+            attendance_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            student_id INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            status TEXT NOT NULL,
+            FOREIGN KEY(student_id) REFERENCES students(student_id)
+        )
+    """)
+
+    connection.commit()
+    connection.close()
+
+def get_average_attendance():
+    connection = get_connection()
+
+    if connection is None:
+        return 0
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT
+            CASE
+                WHEN COUNT(*) = 0 THEN 0
+                ELSE
+                    (SUM(
+                        CASE
+                            WHEN status = 'Present' THEN 1
+                            ELSE 0
+                        END
+                    ) * 100.0) / COUNT(*)
+            END
+        FROM attendance_records
+    """)
+
+    average = cursor.fetchone()[0]
+
+    connection.close()
+
+    return round(average, 2)
+

@@ -3,8 +3,7 @@ from frontend.GUI.quick_actions import create_quick_actions
 from backend.database import get_connection
 from backend.database import create_student_table, create_academic_records_table
 import tkinter as tk
-from backend.database import(get_connection,create_student_table,create_academic_records_table,add_gender_column)
-from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count)
+from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count,create_attendance_table,get_average_attendance)
 
 def get_total_students():
     conn = get_connection()
@@ -24,12 +23,22 @@ def show_dashboard(root):
     create_sidebar(root)
     dashboard_frame = tk.Frame(root, bg="#f5f6fa")
     dashboard_frame.pack(side="right", fill="both", expand=True)
+    stats_frame = tk.Frame(
+    dashboard_frame,
+    bg="#f5f6fa"
+)
+
+    stats_frame.pack(
+    fill="x",
+    padx=30,
+    pady=10
+)
     
     
 
     # Main title
     title_label = tk.Label(
-        dashboard_frame,
+        stats_frame,
         text="Student Management Dashboard",
         font=("Arial", 24, "bold"),
         bg="#f5f6fa")
@@ -37,7 +46,7 @@ def show_dashboard(root):
 
     # Welcome text
     welcome_label = tk.Label(
-        dashboard_frame,
+        stats_frame,
         text="Welcome to the AI Based Student Management System",
         font=("Arial", 14),
         bg="#f5f6fa"
@@ -46,7 +55,7 @@ def show_dashboard(root):
 
     # Main content area
     content_frame = tk.Frame(
-        dashboard_frame,
+        stats_frame,
         bg="white",
         width=800,
         height=300
@@ -64,7 +73,7 @@ def show_dashboard(root):
     content_label.pack(expand=True)
     
     total_students_card = tk.Frame(
-    dashboard_frame,
+    stats_frame,
     bg="white",
     width=150,
     height=80
@@ -96,7 +105,7 @@ def show_dashboard(root):
 
     total_students_value.pack()
     boys_card = tk.Frame(
-    dashboard_frame,
+    stats_frame,
     bg="white",
     width=150,
     height=80
@@ -131,7 +140,7 @@ def show_dashboard(root):
 
 
     girls_card = tk.Frame(
-    dashboard_frame,
+    stats_frame,
     bg="white",
     width=150,
     height=80
@@ -162,9 +171,55 @@ def show_dashboard(root):
 )
 
     girls_value.pack()
-    def refresh_total_students():
-        total_students_value.config(text=str(get_total_students()))
-    quick_actions_frame = create_quick_actions(dashboard_frame, refresh_total_students)
+    attendance_card = tk.Frame(
+    stats_frame,
+    bg="white",
+    width=220,
+    height=80
+)
+
+    attendance_card.pack(
+    side="left",
+    padx=20,
+    pady=10
+)
+
+    attendance_card.pack_propagate(False)
+
+    attendance_title = tk.Label(
+    attendance_card,
+    text="Average Attendance",
+    font=("Arial", 14, "bold"),
+    bg="white"
+)
+
+    attendance_title.pack(pady=(20, 5))
+
+    attendance_value = tk.Label(
+    attendance_card,
+    text=str(get_average_attendance()) + "%",
+    font=("Arial", 24, "bold"),
+    bg="white"
+)
+
+    attendance_value.pack()
+    def refresh_dashboard_stats():
+     total_students_value.config(
+        text=str(get_total_students())
+    )
+
+    boys_value.config(
+        text=str(get_boys_count())
+    )
+
+    girls_value.config(
+        text=str(get_girls_count())
+    )
+
+    attendance_value.config(
+        text=str(get_average_attendance()) + "%"
+    )
+    quick_actions_frame = create_quick_actions(dashboard_frame, refresh_dashboard_stats)
     quick_actions_frame.pack(side = "top", fill = "x", padx = 10, pady = (2,5))
     print("total students: ", get_total_students())
     
@@ -174,6 +229,7 @@ if __name__ == "__main__":
     create_student_table()
     create_academic_records_table()
     add_gender_column()
+    create_attendance_table()
     root = tk.Tk()
     root.title("student management system")
     root.geometry("1700x1000")
