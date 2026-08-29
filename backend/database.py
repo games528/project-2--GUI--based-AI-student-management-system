@@ -209,3 +209,24 @@ def get_average_percentage():
 
      return round(average, 2)
 
+def get_recent_activities():
+    connection = get_connection()
+
+    if connection is None:
+        return []
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT name, student_id
+        FROM students
+        ORDER BY student_id DESC
+        LIMIT 5
+    """)
+
+    activities = cursor.fetchall()
+
+    connection.close()
+
+    return activities
+

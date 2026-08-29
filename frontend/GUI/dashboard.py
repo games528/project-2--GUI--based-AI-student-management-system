@@ -3,7 +3,7 @@ from frontend.GUI.quick_actions import create_quick_actions
 from backend.database import get_connection
 from backend.database import create_student_table, create_academic_records_table
 import tkinter as tk
-from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count,create_attendance_table,get_average_attendance,get_average_percentage)
+from backend.database import(get_connection, create_student_table, create_academic_records_table,add_gender_column,get_boys_count,get_girls_count,create_attendance_table,get_average_attendance,get_average_percentage, get_recent_activities)
 
 def get_total_students():
     conn = get_connection()
@@ -254,10 +254,65 @@ def show_dashboard(root):
     percentage_value.config(
        text=str(get_average_percentage()) + "%"
     )
+    
 
     quick_actions_frame = create_quick_actions(dashboard_frame, refresh_dashboard_stats)
     quick_actions_frame.pack(side = "top", fill = "x", padx = 10, pady = (2,5))
     print("total students: ", get_total_students())
+
+    recent_activities_frame = tk.Frame(
+    dashboard_frame,
+    bg="white"
+)
+
+    recent_activities_frame.pack(
+    fill="x",
+    padx=50,
+    pady=(2, 5)
+)
+
+    recent_title = tk.Label(
+    recent_activities_frame,
+    text="Recent Activities",
+    font=("Arial", 18, "bold"),
+    bg="white"
+)
+
+    recent_title.pack(
+    anchor="w",
+    padx=20,
+    pady=(5, 2)
+)
+
+    activities = get_recent_activities()
+
+    if activities:
+     for name, student_id in activities:
+        activity_label = tk.Label(
+            recent_activities_frame,
+            text=f"Student added: {name}",
+            font=("Arial", 12),
+            bg="white"
+        )
+
+        activity_label.pack(
+            anchor="w",
+            padx=20,
+            pady=3
+        )
+    else:
+     activity_label = tk.Label(
+        recent_activities_frame,
+        text="No recent activities",
+        font=("Arial", 12),
+        bg="white"
+    )
+
+    activity_label.pack(
+        anchor="w",
+        padx=20,
+        pady=20
+    )
     
     return dashboard_frame
 
